@@ -8,13 +8,14 @@
 
 #import "ViewController.h"
 //#import "UIView+XHSSLayoutFramework.h"
-//#import "UIView+HNAXHSSLayoutTool.h"
 //#import "XHSSWebViewVCViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 //#import "UIView+XHSSUIFactory.h"
 #import "XHSSTextField.h"
 #import "XHSSUIFactory.h"
+
+#import "XHSSShadowView.h"
 
 
 @interface ViewController ()
@@ -46,10 +47,36 @@
     rightView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:rightView];
     
+    
+    [self testDrawRect];
+}
+
+
+#pragma mark - test draw rect
+- (void)testDrawRect {
+    XHSSShadowView *shadowView = [[XHSSShadowView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+    [self.view addSubview:shadowView];
+}
+
+#pragma mark - test Layout
+- (void)testLayout {
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(50, 0, 200, 30)];
+    topView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:topView];
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, 30, 200)];
+    leftView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:leftView];
+    UIView *bottomiew = [[UIView alloc] initWithFrame:CGRectMake(100, self.view.frame.size.height - 30, 300, 30)];
+    bottomiew.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:bottomiew];
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 100, 30, 300)];
+    rightView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:rightView];
+    
     //UIView *targetView = [[UIView alloc] init];
-//    UILabel *targetView = [[UILabel alloc] init];
-//    targetView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:targetView];
+    //    UILabel *targetView = [[UILabel alloc] init];
+    //    targetView.backgroundColor = [UIColor redColor];
+    //    [self.view addSubview:targetView];
     
     CGFloat width = self.view.frame.size.width;
     CGFloat height = self.view.frame.size.height;
@@ -57,40 +84,40 @@
     
     
     // refrence to view
-//    targetView.leftDistance(100).toLeftRefView(leftView);
-//    targetView.topDistance(10).toTopRefView(topView);
-//    targetView.bottomDistance(70).toBottomRefView(bottomiew);
-//    targetView.rightDistance(30).toRightRefView(rightView);
-  
+    //    targetView.leftDistance(100).toLeftRefView(leftView);
+    //    targetView.topDistance(10).toTopRefView(topView);
+    //    targetView.bottomDistance(70).toBottomRefView(bottomiew);
+    //    targetView.rightDistance(30).toRightRefView(rightView);
+    
     
     // refrence to view
-//    targetView.leftDistance(20).toLeftRefView(leftView).topDistance(10).toTopRefView(topView).bottomDistance(70).toBottomRefView(bottomiew).rightDistance(30).toRightRefView(rightView);
+    //    targetView.leftDistance(20).toLeftRefView(leftView).topDistance(10).toTopRefView(topView).bottomDistance(70).toBottomRefView(bottomiew).rightDistance(30).toRightRefView(rightView);
     
     
     // equal to num
-//    targetView.leftEqualToNum(20).topEqualToNum(10).bottomEqualToNum(70).rightEqualToNum(40);
+    //    targetView.leftEqualToNum(20).topEqualToNum(10).bottomEqualToNum(70).rightEqualToNum(40);
     
     
     // equal to view
-//    targetView.leftEqualToView(bottomiew).topEqualToView(leftView).bottomEqualToView(rightView).rightEqualToView(topView);
+    //    targetView.leftEqualToView(bottomiew).topEqualToView(leftView).bottomEqualToView(rightView).rightEqualToView(topView);
     
     
     //
-//    targetView.topEqualToNum(70).leftDistance(30).toLeftRefView(leftView).bottomEqualToView(rightView).rightEqualToView(topView);
+    //    targetView.topEqualToNum(70).leftDistance(30).toLeftRefView(leftView).bottomEqualToView(rightView).rightEqualToView(topView);
     
     //
-//    targetView.widthEqualToNum(123).heightEqualToNum(321);
+    //    targetView.widthEqualToNum(123).heightEqualToNum(321);
     
     
     //
-//    [self.view setAdaptionBaseScreenWidth:320];
-//    targetView.laBaseScreenWidth(375).topEqualToNumScreenFit(200).leftEqualToNumScreenFit(30).bottomEqualToNumScreenFit(200).rightEqualToNumScreenFit(30);
+    //    [self.view setAdaptionBaseScreenWidth:320];
+    //    targetView.laBaseScreenWidth(375).topEqualToNumScreenFit(200).leftEqualToNumScreenFit(30).bottomEqualToNumScreenFit(200).rightEqualToNumScreenFit(30);
     
     //
-//    XHSSLayoutBlock layout = ^(UIView *manager){
-//
-//    };
-//    targetView.xhss_addLayout(layout);
+    //    XHSSLayoutBlock layout = ^(UIView *manager){
+    //
+    //    };
+    //    targetView.xhss_addLayout(layout);
     
     
     
@@ -129,54 +156,42 @@
         manager
         .topDistance(100).toTopRefView(targetView)
         .leftEqualToView(bottomiew)
-//        .bottomEqualToView(rightView)
+        //        .bottomEqualToView(rightView)
         .bottomEqualToViewTop(bottomiew)
         .rightEqualToView(topView);
-//        .heightEqualToNum(70);
+        //        .heightEqualToNum(70);
     })
     .xhss_addConfig(config)
     .xhss_addConfig(^(XHSSConfigManager *manager) {
         manager
         .backgroundColor(XHSS_COLOR_RED);
     });
-
-//    targetView1
-//    .xhss_addToSuperView(self.view)
-//    .xhss_addLayout(^(UIView *manager) {
-//        manager
-//        .topDistance(10).toTopRefView(targetView)
-//        .leftEqualToView(targetView)
-//        .heightEqualToView(targetView)
-//        .rightEqualToView(targetView);
-//    })
-//    .xhss_addConfig(config);
-//
-//    targetView2
-//    .xhss_addToSuperView(self.view)
-//    .xhss_addLayout(^(UIView *manager) {
-//        manager
-//        .topDistance(10).toTopRefView(targetView1)
-//        .leftEqualToView(targetView1)
-//        .heightEqualToView(targetView1)
-//        .rightEqualToView(targetView1);
-//    })
-//    .xhss_addConfig(config);
     
-    
-    
-    
-    /*
-     (lldb) po targetView.frame
-     (origin = (x = 100, y = 300), size = (width = 150, height = 100))
-     
-     (lldb) po targetView1.frame
-     (origin = (x = 100, y = 410), size = (width = 150, height = 100))
-     
-     (lldb) po targetView2.frame
-     (origin = (x = 100, y = 520), size = (width = 150, height = 100))
-     */
+    //    targetView1
+    //    .xhss_addToSuperView(self.view)
+    //    .xhss_addLayout(^(UIView *manager) {
+    //        manager
+    //        .topDistance(10).toTopRefView(targetView)
+    //        .leftEqualToView(targetView)
+    //        .heightEqualToView(targetView)
+    //        .rightEqualToView(targetView);
+    //    })
+    //    .xhss_addConfig(config);
+    //
+    //    targetView2
+    //    .xhss_addToSuperView(self.view)
+    //    .xhss_addLayout(^(UIView *manager) {
+    //        manager
+    //        .topDistance(10).toTopRefView(targetView1)
+    //        .leftEqualToView(targetView1)
+    //        .heightEqualToView(targetView1)
+    //        .rightEqualToView(targetView1);
+    //    })
+    //    .xhss_addConfig(config);
 }
 
+
+#pragma mark - test textField
 - (void)testTextField {
     XHSSTextField *targetView = [[XHSSTextField alloc] init];
     targetView.targetViewByKeyboard = self.view;

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/AVFoundation/AVFoundationViewController.m"
-            timestampString = "531143901.273584"
+            timestampString = "535379711.000971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "-exportVideo:videoComposition:composition:"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/AVFoundation/AVFoundationViewController.m"
-            timestampString = "531143804.274328"
+            timestampString = "535379711.00106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-exportVideo:videoComposition:composition:"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/AVFoundation/AVFoundationViewController.m"
-            timestampString = "531143804.274328"
+            timestampString = "535379711.001125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-addVideo:formTime:toTime:toComposition:"
             landmarkType = "7">
          </BreakpointContent>

@@ -39,6 +39,7 @@
 		18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A8C1FE8E778001C9855 /* XHSSPaintingView.m */; };
 		18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */; };
 		18F52A961FE8E779001C9855 /* XHSSToolsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A901FE8E778001C9855 /* XHSSToolsView.m */; };
+		18F52AA11FE91C1F001C9855 /* XHSSShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52AA01FE91C1F001C9855 /* XHSSShadowView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSCutImageView.m; sourceTree = "<group>"; };
 		18F52A8F1FE8E778001C9855 /* XHSSToolsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSToolsView.h; sourceTree = "<group>"; };
 		18F52A901FE8E778001C9855 /* XHSSToolsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSToolsView.m; sourceTree = "<group>"; };
+		18F52A9F1FE91C1F001C9855 /* XHSSShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSShadowView.h; sourceTree = "<group>"; };
+		18F52AA01FE91C1F001C9855 /* XHSSShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSShadowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */ = {
 			isa = PBXGroup;
 			children = (
+				18F52A9E1FE91BDF001C9855 /* CGWidgets */,
 				18F52A861FE8E778001C9855 /* Calculator */,
 				18F52A891FE8E778001C9855 /* ShortCutScreen */,
 				18F52A821FE8E778001C9855 /* UIView+ActionSheet */,
@@ -378,6 +382,15 @@
 			path = PaintingBoard;
 			sourceTree = "<group>";
 		};
+		18F52A9E1FE91BDF001C9855 /* CGWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				18F52A9F1FE91C1F001C9855 /* XHSSShadowView.h */,
+				18F52AA01FE91C1F001C9855 /* XHSSShadowView.m */,
+			);
+			path = CGWidgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,6 +537,7 @@
 				18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */,
 				182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */,
 				18E9F94F1F94D98B00BD3E74 /* main.m in Sources */,
+				18F52AA11FE91C1F001C9855 /* XHSSShadowView.m in Sources */,
 				180F059C1FA6C40200D01EFD /* XHSSDoubleControlSlider.m in Sources */,
 				18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */,
 				18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */,
