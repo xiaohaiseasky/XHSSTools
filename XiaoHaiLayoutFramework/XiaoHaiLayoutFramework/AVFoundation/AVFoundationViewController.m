@@ -7,7 +7,6 @@
 //
 
 #import "AVFoundationViewController.h"
-#import "UIView+HNAXHSSLayoutTool.h"
 #import "XHSSVideoPlayerCnotrolView.h"
 #import <Photos/Photos.h>
 #import <GLKit/GLKit.h>
@@ -65,7 +64,7 @@
 
 - (void)setupUI {
     _playerView = [[UIView alloc] init];
-    _playerView.widthEqualToView(self.view).heightEqualToNum(200).centerEqualToViewCenterPoint(self.view);
+//    _playerView.widthEqualToView(self.view).heightEqualToNum(200).centerEqualToViewCenterPoint(self.view);
     _playerView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:_playerView];
     

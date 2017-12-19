@@ -33,6 +33,12 @@
 		18E9F9681F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9671F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkTests.m */; };
 		18E9F9731F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9721F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.m */; };
 		18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */; };
+		18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */; };
+		18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */; };
+		18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */; };
+		18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A8C1FE8E778001C9855 /* XHSSPaintingView.m */; };
+		18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */; };
+		18F52A961FE8E779001C9855 /* XHSSToolsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A901FE8E778001C9855 /* XHSSToolsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +111,17 @@
 		18E9F9741F94D98B00BD3E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EDF2FA1F9F35B4001CC444 /* XHSSImageBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSImageBrowserVC.h; sourceTree = "<group>"; };
 		18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSImageBrowserVC.m; sourceTree = "<group>"; };
+		18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheet数据源.plist"; sourceTree = "<group>"; };
+		18F52A841FE8E778001C9855 /* UIViewController+XHSSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHSSActionSheet.h"; sourceTree = "<group>"; };
+		18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XHSSActionSheet.m"; sourceTree = "<group>"; };
+		18F52A871FE8E778001C9855 /* XHSSCalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSCalculatorView.h; sourceTree = "<group>"; };
+		18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSCalculatorView.m; sourceTree = "<group>"; };
+		18F52A8B1FE8E778001C9855 /* XHSSPaintingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSPaintingView.h; sourceTree = "<group>"; };
+		18F52A8C1FE8E778001C9855 /* XHSSPaintingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSPaintingView.m; sourceTree = "<group>"; };
+		18F52A8D1FE8E778001C9855 /* XHSSCutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSCutImageView.h; sourceTree = "<group>"; };
+		18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSCutImageView.m; sourceTree = "<group>"; };
+		18F52A8F1FE8E778001C9855 /* XHSSToolsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSToolsView.h; sourceTree = "<group>"; };
+		18F52A901FE8E778001C9855 /* XHSSToolsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSToolsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +159,9 @@
 		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */ = {
 			isa = PBXGroup;
 			children = (
+				18F52A861FE8E778001C9855 /* Calculator */,
+				18F52A891FE8E778001C9855 /* ShortCutScreen */,
+				18F52A821FE8E778001C9855 /* UIView+ActionSheet */,
 				189B048A1FD0E2CD009734FC /* TextField */,
 				182FF97E1F9D819300E8A179 /* Banner */,
 				182FF9811F9D819300E8A179 /* Calendar */,
@@ -318,6 +338,46 @@
 			path = XiaoHaiLayoutFrameworkUITests;
 			sourceTree = "<group>";
 		};
+		18F52A821FE8E778001C9855 /* UIView+ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */,
+				18F52A841FE8E778001C9855 /* UIViewController+XHSSActionSheet.h */,
+				18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */,
+			);
+			path = "UIView+ActionSheet";
+			sourceTree = "<group>";
+		};
+		18F52A861FE8E778001C9855 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				18F52A871FE8E778001C9855 /* XHSSCalculatorView.h */,
+				18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		18F52A891FE8E778001C9855 /* ShortCutScreen */ = {
+			isa = PBXGroup;
+			children = (
+				18F52A8A1FE8E778001C9855 /* PaintingBoard */,
+				18F52A8D1FE8E778001C9855 /* XHSSCutImageView.h */,
+				18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */,
+				18F52A8F1FE8E778001C9855 /* XHSSToolsView.h */,
+				18F52A901FE8E778001C9855 /* XHSSToolsView.m */,
+			);
+			path = ShortCutScreen;
+			sourceTree = "<group>";
+		};
+		18F52A8A1FE8E778001C9855 /* PaintingBoard */ = {
+			isa = PBXGroup;
+			children = (
+				18F52A8B1FE8E778001C9855 /* XHSSPaintingView.h */,
+				18F52A8C1FE8E778001C9855 /* XHSSPaintingView.m */,
+			);
+			path = PaintingBoard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -427,6 +487,7 @@
 				18E9F95D1F94D98B00BD3E74 /* LaunchScreen.storyboard in Resources */,
 				18E9F95A1F94D98B00BD3E74 /* Assets.xcassets in Resources */,
 				18E9F9581F94D98B00BD3E74 /* Main.storyboard in Resources */,
+				18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,18 +516,23 @@
 				181E98051FD91D9D005A6F70 /* UIView+XHSSUIManagerTool.m in Sources */,
 				181E98041FD91D9D005A6F70 /* XHSSUIManager.m in Sources */,
 				18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */,
+				18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */,
 				189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */,
 				18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */,
 				18E9F9521F94D98B00BD3E74 /* AppDelegate.m in Sources */,
 				18E6FDD21F9A1CCB0039393F /* AVFoundationViewController.m in Sources */,
+				18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */,
 				182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */,
 				18E9F94F1F94D98B00BD3E74 /* main.m in Sources */,
 				180F059C1FA6C40200D01EFD /* XHSSDoubleControlSlider.m in Sources */,
+				18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */,
 				18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */,
 				182FF9871F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m in Sources */,
 				18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */,
+				18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */,
 				181E98031FD91D9D005A6F70 /* UIView+XHSSLayoutTool.m in Sources */,
 				1822ADB01FA969E1009247DE /* XHSSVideoEditView.m in Sources */,
+				18F52A961FE8E779001C9855 /* XHSSToolsView.m in Sources */,
 				181E98061FD91D9D005A6F70 /* UIView+XHSSFrameTool.m in Sources */,
 				182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */,
 				18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */,
