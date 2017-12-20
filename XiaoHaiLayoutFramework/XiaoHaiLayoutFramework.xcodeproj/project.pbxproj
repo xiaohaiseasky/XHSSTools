@@ -17,6 +17,7 @@
 		182FF9871F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9801F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m */; };
 		182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9831F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m */; };
 		182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */; };
+		183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */; };
 		189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B048C1FD0E2EA009734FC /* XHSSTextField.m */; };
 		18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */; };
 		18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */; };
@@ -80,6 +81,8 @@
 		182FF9831F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAHiAccumulatePointCalendarView.m; sourceTree = "<group>"; };
 		182FF9851F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAHiAccumulatePointPageControlView.h; sourceTree = "<group>"; };
 		182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAHiAccumulatePointPageControlView.m; sourceTree = "<group>"; };
+		183701C21FEA6C73008F73C5 /* UIView+XHSSShadowMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XHSSShadowMask.h"; sourceTree = "<group>"; };
+		183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHSSShadowMask.m"; sourceTree = "<group>"; };
 		189B048B1FD0E2EA009734FC /* XHSSTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSTextField.h; sourceTree = "<group>"; };
 		189B048C1FD0E2EA009734FC /* XHSSTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSTextField.m; sourceTree = "<group>"; };
 		18AA88171FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSVideoPlayerCnotrolView.h; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 			children = (
 				18F52A9F1FE91C1F001C9855 /* XHSSShadowView.h */,
 				18F52AA01FE91C1F001C9855 /* XHSSShadowView.m */,
+				183701C21FEA6C73008F73C5 /* UIView+XHSSShadowMask.h */,
+				183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */,
 			);
 			path = CGWidgets;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 			files = (
 				18E9F9551F94D98B00BD3E74 /* ViewController.m in Sources */,
 				181E98051FD91D9D005A6F70 /* UIView+XHSSUIManagerTool.m in Sources */,
+				183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */,
 				181E98041FD91D9D005A6F70 /* XHSSUIManager.m in Sources */,
 				18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */,
 				18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */,

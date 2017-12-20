@@ -48,7 +48,88 @@
 @end
 
 @implementation XHSSShadowView
+#pragma mark - setter & getter
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    _backgroundColor = backgroundColor;
+    [self setNeedsDisplay];
+}
+- (void)setRect:(CGRect)rect {
+    _rect = rect;
+    [self refreshRect];
+    [self setNeedsDisplay];
+}
+- (void)setInnerRectRadius:(CGFloat)innerRectRadius {
+    _innerRectRadius = innerRectRadius;
+    [self setNeedsDisplay];
+}
+- (void)setOutterRectRadius:(CGFloat)outterRectRadius {
+    _outterRectRadius = outterRectRadius;
+    [self setNeedsDisplay];
+}
+- (void)setContent:(id)content {
+    _content = content;
+    [self setNeedsDisplay];
+}
+- (void)setGradientDirection:(XHSSDrawGradientDirection)gradientDirection {
+    _gradientDirection = gradientDirection;
+    [self setNeedsDisplay];
+}
+- (void)setGradientColors:(NSArray<UIColor *> *)gradientColors {
+    _gradientColors = gradientColors;
+    [self setNeedsDisplay];
+}
+- (void)setLinearGradientStartPoint:(CGPoint)linearGradientStartPoint {
+    _linearGradientStartPoint = linearGradientStartPoint;
+    [self setNeedsDisplay];
+}
+- (void)setLinearGradientEndPoint:(CGPoint)linearGradientEndPoint {
+    _linearGradientEndPoint = linearGradientEndPoint;
+    [self setNeedsDisplay];
+}
+- (void)setRadialGradientStartRadius:(CGFloat)radialGradientStartRadius {
+    _radialGradientStartRadius = radialGradientStartRadius;
+    [self setNeedsDisplay];
+}
+- (void)setRadialGradientEndRadius:(CGFloat)radialGradientEndRadius {
+    _radialGradientEndRadius = radialGradientEndRadius;
+    [self setNeedsDisplay];
+}
+- (void)setRadialGradientStartCenterPoint:(CGPoint)radialGradientStartCenterPoint {
+    _radialGradientStartCenterPoint = radialGradientStartCenterPoint;
+    [self setNeedsDisplay];
+}
+- (void)setRadialGradientEndCenterPoint:(CGPoint)radialGradientEndCenterPoint {
+    _radialGradientEndCenterPoint = radialGradientEndCenterPoint;
+    [self setNeedsDisplay];
+}
+- (void)setMaskColor:(UIColor *)maskColor {
+    _maskColor = maskColor;
+    [self setNeedsDisplay];
+}
+- (void)setInnerEdgeInsets:(UIEdgeInsets)innerEdgeInsets {
+    _innerEdgeInsets = innerEdgeInsets;
+    [self refreshRect];
+    [self setNeedsDisplay];
+}
+- (void)setOutterEdgeInsets:(UIEdgeInsets)outterEdgeInsets {
+    _outterEdgeInsets = outterEdgeInsets;
+    [self refreshRect];
+    [self setNeedsDisplay];
+}
+- (void)setShadowColor:(UIColor *)shadowColor {
+    _shadowColor = shadowColor;
+    [self setNeedsDisplay];
+}
+- (void)setShadowOffset:(CGSize)shadowOffset {
+    _shadowOffset = shadowOffset;
+    [self setNeedsDisplay];
+}
+- (void)setShadowBlur:(CGFloat)shadowBlur {
+    _shadowBlur = shadowBlur;
+    [self setNeedsDisplay];
+}
 
+#pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -104,6 +185,17 @@
     
     
     
+    [self refreshRect];
+    
+    
+    self.backgroundColor = [UIColor cyanColor];
+    self.maskColor= [UIColor blueColor];
+    self.shadowColor = [UIColor redColor];
+    self.gradientColors = @[[UIColor blueColor], [UIColor redColor], [UIColor magentaColor]];
+    self.gradientDirection = XHSSDrawGradientDirectionRadial;
+}
+
+- (void)refreshRect {
     self.innerRect = CGRectMake(self.rect.origin.x +self.innerEdgeInsets.left,
                                 self.rect.origin.y +self.innerEdgeInsets.top,
                                 self.rect.size.width -self.innerEdgeInsets.left -self.innerEdgeInsets.right,
@@ -120,15 +212,9 @@
     self.radialGradientStartRadius = 0; // CGRectGetWidth(self.innerRect)/2.0f;
     self.radialGradientEndCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
     self.radialGradientEndRadius = CGRectGetWidth(self.outterRect)/2.0f;
-    
-    
-    self.backgroundColor = [UIColor cyanColor];
-    self.maskColor= [UIColor blueColor];
-    self.shadowColor = [UIColor redColor];
-    self.gradientColors = @[[UIColor blueColor], [UIColor redColor], [UIColor magentaColor]];
-    self.gradientDirection = XHSSDrawGradientDirectionRadial;
 }
 
+#pragma mark - draw
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     
