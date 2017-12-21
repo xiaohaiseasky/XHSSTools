@@ -7,7 +7,7 @@
 //
 
 /*
- 模块化架构、解耦、分层、响应式编程，函数式编程
+ 模块化架构、解耦、分层、响应式编程，函数式编程、异步计算／绘制／加载
  */
 
 #import <UIKit/UIKit.h>
@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, XHSSDrawGradientDirection) {
 @property (nonatomic, assign) CGFloat innerRectRadius;
 @property (nonatomic, assign) CGFloat outterRectRadius;
 @property (nonatomic, strong) id content;
+@property (nonatomic, assign) BOOL cleareCenter;
 
 @property (nonatomic,assign) XHSSDrawGradientDirection gradientDirection;
 @property (nonatomic, strong) NSArray<UIColor*> *gradientColors;

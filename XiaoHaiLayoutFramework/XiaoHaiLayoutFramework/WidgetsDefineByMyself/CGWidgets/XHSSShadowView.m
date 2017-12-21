@@ -10,53 +10,24 @@
 
 @interface XHSSShadowView ()
 
-// background area
-//@property (nonatomic, strong) UIColor *backgroundColor;
-
-// center area
-//@property (nonatomic, assign) CGRect rect;
 @property (nonatomic, assign) CGRect innerRect;
 @property (nonatomic, assign) CGRect outterRect;
-//@property (nonatomic, assign) CGFloat innerRectRadius;
-//@property (nonatomic, assign) CGFloat outterRectRadius;
-//@property (nonatomic, strong) id content;
-
-//@property (nonatomic,assign) XHSSDrawGradientDirection gradientDirection;
-//@property (nonatomic, strong) NSArray<UIColor*> *gradientColors;
-//
-//@property (nonatomic, assign) CGPoint linearGradientStartPoint;
-//@property (nonatomic, assign) CGPoint linearGradientEndPoint;
-//
-//@property (nonatomic, assign) CGPoint radialGradientStartCenterPoint;
-//@property (nonatomic, assign) CGFloat radialGradientStartRadius;
-//@property (nonatomic, assign) CGPoint radialGradientEndCenterPoint;
-//@property (nonatomic, assign) CGFloat radialGradientEndRadius;
-
-// mask area
-//@property (nonatomic, strong) UIColor *maskColor;
-//@property (nonatomic, assign) UIEdgeInsets innerEdgeInsets;
-//@property (nonatomic, assign) UIEdgeInsets outterEdgeInsets;
-//@property (nonatomic, strong) UIColor *borderColor;
-//@property (nonatomic, assign) CGFloat borderWidth;
-//@property (nonatomic, assign) CGFloat cornerRadius;
-
-// shadow area
-//@property (nonatomic, strong) UIColor *shadowColor;
-//@property (nonatomic, assign) CGSize shadowOffset;
-//@property (nonatomic, assign) CGFloat shadowBlur;
 
 @end
 
 @implementation XHSSShadowView
 #pragma mark - setter & getter
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+//    _rect = CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame));
+}
+
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     _backgroundColor = backgroundColor;
     [self setNeedsDisplay];
 }
 - (void)setRect:(CGRect)rect {
     _rect = rect;
-    [self refreshRect];
-    [self setNeedsDisplay];
 }
 - (void)setInnerRectRadius:(CGFloat)innerRectRadius {
     _innerRectRadius = innerRectRadius;
@@ -68,6 +39,10 @@
 }
 - (void)setContent:(id)content {
     _content = content;
+    [self setNeedsDisplay];
+}
+- (void)setCleareCenter:(BOOL)cleareCenter {
+    _cleareCenter = cleareCenter;
     [self setNeedsDisplay];
 }
 - (void)setGradientDirection:(XHSSDrawGradientDirection)gradientDirection {
@@ -109,11 +84,14 @@
 - (void)setInnerEdgeInsets:(UIEdgeInsets)innerEdgeInsets {
     _innerEdgeInsets = innerEdgeInsets;
     [self refreshRect];
+    [self refreshPointAndRadius];
     [self setNeedsDisplay];
 }
 - (void)setOutterEdgeInsets:(UIEdgeInsets)outterEdgeInsets {
     _outterEdgeInsets = outterEdgeInsets;
+    [self refreshFrame];
     [self refreshRect];
+    [self refreshPointAndRadius];
     [self setNeedsDisplay];
 }
 - (void)setShadowColor:(UIColor *)shadowColor {
@@ -134,7 +112,6 @@
     self = [super initWithFrame:frame];
     if (self) {
 //        self.backgroundColor = [UIColor clearColor];
-//        self.backgroundColor = [UIColor blueColor];
         self.opaque = NO;
         
         [self setupData];
@@ -145,73 +122,53 @@
 - (void)setupData {
     
     /// *** background area ***
-//    self.backgroundColor;
     
     /// *** center area ***
     self.rect = self.bounds;
-    //self.innerRect = CGRectZero;
-    //self.outterRect = self.rect;
     self.innerRectRadius = 0;
     self.outterRectRadius = 0;
-//    self.content;
+    self.cleareCenter = NO;
     
     self.gradientDirection = XHSSDrawGradientDirectionNOne;
-//    self.gradientColors;
-    
-    //self.linearGradientStartPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMinY(self.innerRect));
-    //self.linearGradientEndPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMaxY(self.innerRect));;
 
-    //self.radialGradientStartCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
-    //self.radialGradientStartRadius = CGRectGetWidth(self.innerRect)/2.0f;
-    //self.radialGradientEndCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));;
-    //self.radialGradientEndRadius = CGRectGetWidth(self.outterRect)/2.0f;;
-    
     /// *** mask area ***
-//    self.maskColor;
     self.innerEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.outterEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    //self.borderColor;
-    //self.borderWidth;
-    //self.cornerRadius;
+    self.outterEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     
     /// *** shadow area ***
-//    self.shadowColor;
     self.shadowOffset = CGSizeZero;
     self.shadowBlur = 17;
     
+    [self refreshPointAndRadius];
+}
 
+- (void)refreshPointAndRadius {
+    _linearGradientStartPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMinY(self.innerRect));
+    _linearGradientEndPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMaxY(self.innerRect));
     
-    self.innerEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    
-    
-    
-    [self refreshRect];
-    
-    
-    self.backgroundColor = [UIColor cyanColor];
-    self.maskColor= [UIColor blueColor];
-    self.shadowColor = [UIColor redColor];
-    self.gradientColors = @[[UIColor blueColor], [UIColor redColor], [UIColor magentaColor]];
-    self.gradientDirection = XHSSDrawGradientDirectionRadial;
+    _radialGradientStartCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
+    _radialGradientStartRadius = 0;
+    _radialGradientEndCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
+    _radialGradientEndRadius = CGRectGetWidth(self.outterRect)/2.0f;
 }
 
 - (void)refreshRect {
-    self.innerRect = CGRectMake(self.rect.origin.x +self.innerEdgeInsets.left,
-                                self.rect.origin.y +self.innerEdgeInsets.top,
-                                self.rect.size.width -self.innerEdgeInsets.left -self.innerEdgeInsets.right,
-                                self.rect.size.height -self.innerEdgeInsets.top -self.innerEdgeInsets.bottom);
-    self.outterRect = CGRectMake(self.rect.origin.x -self.outterEdgeInsets.left,
-                                 self.rect.origin.y -self.outterEdgeInsets.top,
-                                 self.rect.size.width +self.outterEdgeInsets.left +self.outterEdgeInsets.right,
-                                 self.rect.size.height +self.outterEdgeInsets.top +self.outterEdgeInsets.bottom);
-    
-    self.linearGradientStartPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMinY(self.innerRect));
-    self.linearGradientEndPoint = CGPointMake(CGRectGetMinX(self.innerRect), CGRectGetMaxY(self.innerRect));
-    
-    self.radialGradientStartCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
-    self.radialGradientStartRadius = 0; // CGRectGetWidth(self.innerRect)/2.0f;
-    self.radialGradientEndCenterPoint = CGPointMake(CGRectGetMidX(self.innerRect), CGRectGetMidY(self.innerRect));
-    self.radialGradientEndRadius = CGRectGetWidth(self.outterRect)/2.0f;
+    _innerRect = CGRectMake(CGRectGetMinX(_rect) -self.frame.origin.x +self.innerEdgeInsets.left,
+                            CGRectGetMinY(_rect) -self.frame.origin.y +self.innerEdgeInsets.top,
+                            self.rect.size.width -self.innerEdgeInsets.left -self.innerEdgeInsets.right,
+                            self.rect.size.height -self.innerEdgeInsets.top -self.innerEdgeInsets.bottom);
+    _outterRect = CGRectMake(CGRectGetMinX(_rect) -CGRectGetMinX(self.frame) -self.outterEdgeInsets.left,
+                             CGRectGetMinY(_rect) -CGRectGetMinY(self.frame) -self.outterEdgeInsets.top,
+                             _rect.size.width +self.outterEdgeInsets.left +self.outterEdgeInsets.right,
+                             _rect.size.height +self.outterEdgeInsets.top +self.outterEdgeInsets.bottom);
+}
+
+- (void)refreshFrame {
+    /// *** it is not deal with taht if edgeInsets components is a value smaller than zero ***
+    self.frame = CGRectMake(CGRectGetMinX(_rect) -self.outterEdgeInsets.left,
+                            CGRectGetMinY(_rect) -self.outterEdgeInsets.top,
+                            _rect.size.width +self.outterEdgeInsets.left +self.outterEdgeInsets.right,
+                            _rect.size.height +self.outterEdgeInsets.top +self.outterEdgeInsets.bottom);
 }
 
 #pragma mark - draw
@@ -244,19 +201,21 @@
     if (self.shadowColor) {
         CGContextSaveGState(currentContext);
         CGContextSetShadowWithColor(currentContext,
-                                    self.shadowOffset/*CGSizeZero*//*CGSizeMake(7, 7)*/,
+                                    self.shadowOffset,
                                     self.shadowBlur,
                                     self.shadowColor.CGColor);
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
         CGContextAddPath(currentContext, path.CGPath);
         CGContextDrawPath(currentContext, kCGPathFill);
         CGContextRestoreGState(currentContext);
+        
+        [self clearInnerRect:currentContext withPath:path];
     }
 
     // *** center area ***
     CGContextSaveGState(currentContext);
     // ** clear center background color **
-    if (self.content == nil) {
+    if (self.content == nil && self.cleareCenter) {
         CGContextClearRect(currentContext, self.innerRect);
     }
     // ** set center background color **
@@ -268,6 +227,9 @@
     else if ([self.content isKindOfClass:[UIImage class]]) {
         UIImage *image = (UIImage*)self.content;
         [image drawInRect:self.innerRect];
+    }
+    else {
+        
     }
     CGContextRestoreGState(currentContext);
 
@@ -326,9 +288,25 @@
 
         CGColorSpaceRelease(colorRef);
         CGGradientRelease(gradient);
-
         CGContextRestoreGState(currentContext);
+        
+//        CGContextSaveGState(currentContext);
+//        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
+//        UIBezierPath *outterPath = [UIBezierPath bezierPathWithRoundedRect:self.outterRect cornerRadius:self.outterRectRadius];
+//        CGContextAddPath(currentContext, path.CGPath);
+//        CGContextAddPath(currentContext, outterPath.CGPath);
+//        CGContextSetBlendMode(currentContext, kCGBlendModeScreen);
+//        CGContextDrawPath(currentContext, kCGPathEOFill);
+//        CGContextRestoreGState(currentContext);
     }
+}
+
+- (void) clearInnerRect:(CGContextRef)context withPath:(UIBezierPath*)path {
+    CGContextSaveGState(context);
+    CGContextSetBlendMode(context, kCGBlendModeClear);
+    CGContextAddPath(context, path.CGPath);
+    CGContextDrawPath(context, kCGPathFill);
+    CGContextRestoreGState(context);
 }
 
 - (CGGradientRef)gradientWithColors:(NSArray*)colors {

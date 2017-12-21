@@ -9,38 +9,61 @@
 #import <UIKit/UIKit.h>
 #import "XHSSShadowView.h"
 
+
+@class XHSSShadowMaskViewConfigManager;
+
+
+/**
+ 带阴影遮罩视图的 UIView 分类
+ */
 @interface UIView (XHSSShadowMask)
 
 @property (nonatomic, strong) XHSSShadowView *shadowView;
 
-// background area
-@property (nonatomic, strong) UIColor *backgroundColor;
-
-// center area
-@property (nonatomic, assign) CGRect rect;
-@property (nonatomic, assign) CGFloat innerRectRadius;
-@property (nonatomic, assign) CGFloat outterRectRadius;
-@property (nonatomic, strong) id content;
-
-@property (nonatomic,assign) XHSSDrawGradientDirection gradientDirection;
-@property (nonatomic, strong) NSArray<UIColor*> *gradientColors;
-
-@property (nonatomic, assign) CGPoint linearGradientStartPoint;
-@property (nonatomic, assign) CGPoint linearGradientEndPoint;
-
-@property (nonatomic, assign) CGPoint radialGradientStartCenterPoint;
-@property (nonatomic, assign) CGFloat radialGradientStartRadius;
-@property (nonatomic, assign) CGPoint radialGradientEndCenterPoint;
-@property (nonatomic, assign) CGFloat radialGradientEndRadius;
-
-// mask area
-@property (nonatomic, strong) UIColor *maskColor;
-@property (nonatomic, assign) UIEdgeInsets innerEdgeInsets;
-@property (nonatomic, assign) UIEdgeInsets outterEdgeInsets;
-
-// shadow area
-@property (nonatomic, strong) UIColor *shadowColor;
-@property (nonatomic, assign) CGSize shadowOffset;
-@property (nonatomic, assign) CGFloat shadowBlur;
+- (void)addShadowMask:(void(^)(XHSSShadowMaskViewConfigManager *manager))managerConfigBlock;
 
 @end
+
+
+
+
+/**
+ 阴影遮罩视图的配置管理
+ */
+@interface XHSSShadowMaskViewConfigManager : NSObject
+
+@property (nonatomic, strong) UIView *targetView;
+
+- (XHSSShadowMaskViewConfigManager*(^)(UIColor *backgroundColor))backgroundColor;
+
+//- (XHSSShadowMaskViewConfigManager*(^)(CGRect rect))rect;
+- (XHSSShadowMaskViewConfigManager*(^)(CGFloat innerRectRadius))innerRectRadius;
+- (XHSSShadowMaskViewConfigManager*(^)(CGFloat outterRectRadius))outterRectRadius;
+- (XHSSShadowMaskViewConfigManager*(^)(id content))content;
+- (XHSSShadowMaskViewConfigManager*(^)(BOOL cleareCenter))cleareCenter;
+
+- (XHSSShadowMaskViewConfigManager*(^)(XHSSDrawGradientDirection gradientDirection))gradientDirection;
+- (XHSSShadowMaskViewConfigManager*(^)(NSArray<UIColor*> *gradientColors))gradientColors;
+
+- (XHSSShadowMaskViewConfigManager*(^)(CGPoint linearGradientStartPoint))linearGradientStartPoint;
+- (XHSSShadowMaskViewConfigManager*(^)(CGPoint linearGradientEndPoint))linearGradientEndPoint;
+
+- (XHSSShadowMaskViewConfigManager*(^)(CGPoint radialGradientStartCenterPoint))radialGradientStartCenterPoint;
+- (XHSSShadowMaskViewConfigManager*(^)(CGFloat radialGradientStartRadius))radialGradientStartRadius;
+- (XHSSShadowMaskViewConfigManager*(^)(CGPoint radialGradientEndCenterPoint))radialGradientEndCenterPoint;
+- (XHSSShadowMaskViewConfigManager*(^)(CGFloat radialGradientEndRadius))radialGradientEndRadius;
+
+- (XHSSShadowMaskViewConfigManager*(^)(UIColor *maskColor))maskColor;
+- (XHSSShadowMaskViewConfigManager*(^)(UIEdgeInsets innerEdgeInsets))innerEdgeInsets;
+- (XHSSShadowMaskViewConfigManager*(^)(UIEdgeInsets outterEdgeInsets))outterEdgeInsets;
+
+- (XHSSShadowMaskViewConfigManager*(^)(UIColor *shadowColor))shadowColor;
+- (XHSSShadowMaskViewConfigManager*(^)(CGSize shadowOffset))shadowOffset;
+- (XHSSShadowMaskViewConfigManager*(^)(CGFloat shadowBlur))shadowBlur;
+
+@end
+
+
+
+
+

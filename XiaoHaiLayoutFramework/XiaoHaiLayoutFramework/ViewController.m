@@ -15,7 +15,7 @@
 #import "XHSSTextField.h"
 #import "XHSSUIFactory.h"
 
-#import "XHSSShadowView.h"
+#import "UIView+XHSSShadowMask.h"
 
 
 @interface ViewController ()
@@ -54,8 +54,39 @@
 
 #pragma mark - test draw rect
 - (void)testDrawRect {
-    XHSSShadowView *shadowView = [[XHSSShadowView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
-    [self.view addSubview:shadowView];
+//    XHSSShadowView *shadowView = [[XHSSShadowView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+//    [self.view addSubview:shadowView];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 170, 170)];
+    [view addShadowMask:^(XHSSShadowMaskViewConfigManager *manager) {
+        manager
+        .backgroundColor([UIColor cyanColor])
+        
+        //.rect()
+        //.content()
+        .innerRectRadius(10)
+        .outterRectRadius(10)
+        .cleareCenter(NO)
+        
+        .gradientDirection(XHSSDrawGradientDirectionRadial)
+        .gradientColors(@[[UIColor redColor],[UIColor greenColor],[UIColor blueColor]])
+        .linearGradientStartPoint(CGPointMake(CGRectGetMinX(view.frame), CGRectGetMinY(view.frame)))
+        .linearGradientEndPoint(CGPointMake(CGRectGetMinX(view.frame), CGRectGetMaxY(view.frame)))
+        .radialGradientStartCenterPoint(CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame)))
+        .radialGradientStartRadius(CGRectGetWidth(view.frame)/2.0f)
+        .radialGradientEndCenterPoint(CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame)))
+        .radialGradientEndRadius(CGRectGetWidth(view.frame)/2.0)
+        
+        .maskColor([UIColor blueColor])
+        .innerEdgeInsets(UIEdgeInsetsMake(10, 10, 10, 10))
+        .outterEdgeInsets(UIEdgeInsetsMake(30, 30, 30, 30))
+        
+        .shadowColor([UIColor redColor])
+        //.shadowOffset(CGSizeMake(17, 17))
+        .shadowBlur(17)
+        ;
+    }];
+    [self.view addSubview:view];
 }
 
 #pragma mark - test Layout
