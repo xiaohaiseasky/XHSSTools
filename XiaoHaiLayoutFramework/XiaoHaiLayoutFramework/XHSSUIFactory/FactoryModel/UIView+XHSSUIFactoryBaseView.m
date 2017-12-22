@@ -28,16 +28,27 @@
 
 #pragma mark -
 - (void)setupWithViewModel:(XHSSUIFactoryViewModel*)viewModel {
-    NSString *componentType = viewModel.componentType;
-    NSString *componentName = viewModel.componentName;
+    //NSString *componentType = viewModel.componentType;
+    //NSString *componentName = viewModel.componentName;
     XHSSConfigBridgeBlock componentConfig = viewModel.componentConfig;
-    NSString *componentLayoutRefView = viewModel.componentLayoutRefView;
+    //NSString *componentLayoutRefView = viewModel.componentLayoutRefView;
     XHSSLayoutBridgeBlock componentLayout = viewModel.componentLayout;
-    NSString *componentAction = viewModel.componentAction;
-    XHSSUIFactoryViewModel *subComponent = viewModel.subComponent;
-    NSString *componentDataKeyPath = viewModel.componentDataKeyPath;
+    //NSString *componentAction = viewModel.componentAction;
+    //XHSSUIFactoryViewModel *subComponent = viewModel.subComponent;
+    //NSString *componentDataKeyPath = viewModel.componentDataKeyPath;
+    //id dataModel = viewModel.dataModel;
     
+    if (componentConfig) {
+        XHSSConfigManagerBridge *configManager = [[XHSSConfigManagerBridge alloc] init];
+        //configManager.targetView =
+        componentConfig(configManager);
+    }
     
+    if (componentLayout) {
+        XHSSLayoutManagerBridge *layoutManager = [[XHSSLayoutManagerBridge alloc] init];
+        //layoutManager.targetView =
+        componentLayout(layoutManager);
+    }
 }
 
 - (void)configWithDataModel:(id)dataModel {

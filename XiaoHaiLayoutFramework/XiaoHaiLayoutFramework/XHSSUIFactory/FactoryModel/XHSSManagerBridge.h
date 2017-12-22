@@ -430,6 +430,8 @@
 // =============================================
 @interface XHSSConfigManagerBridge : NSObject <XHSSLabelConfigProtocol, XHSSButtonConfigProtocol>
 
+@property (nonatomic, strong) UIView * _Nonnull targetView;
+
 @end
 
 
@@ -441,6 +443,8 @@
 //      XHSSLayoutManagerBridge
 // =============================================
 @interface XHSSLayoutManagerBridge : NSObject <XHSSLayoutProtocol>
+
+@property (nonatomic, strong) UIView * _Nonnull targetView;
 
 @end
 

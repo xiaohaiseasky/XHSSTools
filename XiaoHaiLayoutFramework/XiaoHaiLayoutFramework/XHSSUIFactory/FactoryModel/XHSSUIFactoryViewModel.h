@@ -24,5 +24,6 @@ typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge *LayoutManager);
 @property (nonatomic, strong) NSString *componentAction;
 @property (nonatomic, strong) XHSSUIFactoryViewModel *subComponent;
 @property (nonatomic, strong) NSString *componentDataKeyPath;
+@property (nonatomic, strong) id dataModel;
 
 @end
