@@ -290,14 +290,14 @@
         CGGradientRelease(gradient);
         CGContextRestoreGState(currentContext);
         
-//        CGContextSaveGState(currentContext);
-//        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
-//        UIBezierPath *outterPath = [UIBezierPath bezierPathWithRoundedRect:self.outterRect cornerRadius:self.outterRectRadius];
-//        CGContextAddPath(currentContext, path.CGPath);
-//        CGContextAddPath(currentContext, outterPath.CGPath);
-//        CGContextSetBlendMode(currentContext, kCGBlendModeScreen);
-//        CGContextDrawPath(currentContext, kCGPathEOFill);
-//        CGContextRestoreGState(currentContext);
+        CGContextSaveGState(currentContext);
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
+        UIBezierPath *outterPath = [UIBezierPath bezierPathWithRoundedRect:self.outterRect cornerRadius:self.outterRectRadius];
+        CGContextAddPath(currentContext, path.CGPath);
+        CGContextAddPath(currentContext, outterPath.CGPath);
+        CGContextSetBlendMode(currentContext, kCGBlendModeClear);
+        CGContextDrawPath(currentContext, kCGPathEOFill);
+        CGContextRestoreGState(currentContext);
     }
 }
 

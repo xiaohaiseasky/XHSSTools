@@ -33,7 +33,10 @@
 		18E9F95D1F94D98B00BD3E74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E9F95B1F94D98B00BD3E74 /* LaunchScreen.storyboard */; };
 		18E9F9681F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9671F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkTests.m */; };
 		18E9F9731F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9721F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.m */; };
+		18EB948F1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB948E1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m */; };
+		18EB94921FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB94911FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m */; };
 		18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */; };
+		18F2C8131FECA577006E3DE9 /* XHSSManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */; };
 		18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */; };
 		18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */; };
 		18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */; };
@@ -113,8 +116,14 @@
 		18E9F96E1F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XiaoHaiLayoutFrameworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E9F9721F94D98B00BD3E74 /* XiaoHaiLayoutFrameworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoHaiLayoutFrameworkUITests.m; sourceTree = "<group>"; };
 		18E9F9741F94D98B00BD3E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18EB948D1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSUIFactoryViewModel.h; sourceTree = "<group>"; };
+		18EB948E1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSUIFactoryViewModel.m; sourceTree = "<group>"; };
+		18EB94901FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XHSSUIFactoryBaseView.h"; sourceTree = "<group>"; };
+		18EB94911FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHSSUIFactoryBaseView.m"; sourceTree = "<group>"; };
 		18EDF2FA1F9F35B4001CC444 /* XHSSImageBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSImageBrowserVC.h; sourceTree = "<group>"; };
 		18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSImageBrowserVC.m; sourceTree = "<group>"; };
+		18F2C8111FECA577006E3DE9 /* XHSSManagerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSManagerBridge.h; sourceTree = "<group>"; };
+		18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSManagerBridge.m; sourceTree = "<group>"; };
 		18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheet数据源.plist"; sourceTree = "<group>"; };
 		18F52A841FE8E778001C9855 /* UIViewController+XHSSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHSSActionSheet.h"; sourceTree = "<group>"; };
 		18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XHSSActionSheet.m"; sourceTree = "<group>"; };
@@ -207,6 +216,7 @@
 		18399D991FD4D7C2004E245E /* XHSSUIFactory */ = {
 			isa = PBXGroup;
 			children = (
+				18EB948C1FEBBAE4001FACE2 /* FactoryModel */,
 				181E97F91FD91D9C005A6F70 /* UIView+XHSSFrameTool.h */,
 				181E98011FD91D9D005A6F70 /* UIView+XHSSFrameTool.m */,
 				181E97FD1FD91D9C005A6F70 /* UIView+XHSSLayoutTool.h */,
@@ -343,6 +353,19 @@
 				18E9F9741F94D98B00BD3E74 /* Info.plist */,
 			);
 			path = XiaoHaiLayoutFrameworkUITests;
+			sourceTree = "<group>";
+		};
+		18EB948C1FEBBAE4001FACE2 /* FactoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				18EB948D1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.h */,
+				18EB948E1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m */,
+				18EB94901FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.h */,
+				18EB94911FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m */,
+				18F2C8111FECA577006E3DE9 /* XHSSManagerBridge.h */,
+				18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */,
+			);
+			path = FactoryModel;
 			sourceTree = "<group>";
 		};
 		18F52A821FE8E778001C9855 /* UIView+ActionSheet */ = {
@@ -533,6 +556,7 @@
 				18E9F9551F94D98B00BD3E74 /* ViewController.m in Sources */,
 				181E98051FD91D9D005A6F70 /* UIView+XHSSUIManagerTool.m in Sources */,
 				183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */,
+				18EB94921FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m in Sources */,
 				181E98041FD91D9D005A6F70 /* XHSSUIManager.m in Sources */,
 				18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */,
 				18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */,
@@ -550,11 +574,13 @@
 				182FF9871F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m in Sources */,
 				18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */,
 				18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */,
+				18EB948F1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m in Sources */,
 				181E98031FD91D9D005A6F70 /* UIView+XHSSLayoutTool.m in Sources */,
 				1822ADB01FA969E1009247DE /* XHSSVideoEditView.m in Sources */,
 				18F52A961FE8E779001C9855 /* XHSSToolsView.m in Sources */,
 				181E98061FD91D9D005A6F70 /* UIView+XHSSFrameTool.m in Sources */,
 				182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */,
+				18F2C8131FECA577006E3DE9 /* XHSSManagerBridge.m in Sources */,
 				18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */,
 				18E583C51F99FF7600A42920 /* XHSSWebViewVC.m in Sources */,
 				181E98071FD91D9D005A6F70 /* XHSSUIFactory.m in Sources */,

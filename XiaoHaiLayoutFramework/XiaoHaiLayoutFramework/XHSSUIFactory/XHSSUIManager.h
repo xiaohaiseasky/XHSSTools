@@ -99,6 +99,10 @@ typedef void(^XHSSLayoutBlock)(UIView *layoutView);
 typedef void(^XHSSConfigBlock)(XHSSConfigManager *layoutView);
 
 
+#pragma mark - =========== XHSSUIManager ===========
+// =============================================
+//      XHSSUIManager
+// =============================================
 @interface XHSSUIManager : NSObject
 
 /// *** below mark info should be define whith varibles which are extern const ***
@@ -123,6 +127,7 @@ typedef void(^XHSSConfigBlock)(XHSSConfigManager *layoutView);
 
 
 
+#pragma mark - =========== ConfigManager ============
 // =============================================
 //      ConfigManager
 // =============================================
@@ -263,6 +268,7 @@ typedef void(^XHSSConfigBlock)(XHSSConfigManager *layoutView);
 
 
 
+#pragma mark - =========== LayoutManager ===========
 // =============================================
 //      LayoutManager
 // =============================================

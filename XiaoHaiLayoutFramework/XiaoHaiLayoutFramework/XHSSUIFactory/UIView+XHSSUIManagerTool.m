@@ -30,7 +30,7 @@
 - (UIView*(^)(XHSSConfigBlock config))xhss_addConfig {
     return ^(XHSSConfigBlock config) {
         if (config) {
-            XHSSConfigManager *configManager = [XHSSConfigManager shareConfigManager];
+            XHSSConfigManager *configManager = [[XHSSConfigManager alloc] init];
             configManager.targetView = self;
             config(configManager);
         }
@@ -41,7 +41,7 @@
 - (UIView*(^)(XHSSConfigBlock config))xhss_addConfigRelated {
     return ^(XHSSConfigBlock config) {
         if (config) {
-            XHSSConfigManager *configManager = [[XHSSConfigManager alloc] init];
+            XHSSConfigManager *configManager = [XHSSConfigManager shareConfigManager];
             configManager.targetView = self;
             config(configManager);
         }

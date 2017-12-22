@@ -16,6 +16,7 @@
 #import "XHSSUIFactory.h"
 
 #import "UIView+XHSSShadowMask.h"
+#import "XHSSUIFactoryViewModel.h"
 
 
 @interface ViewController ()
@@ -51,6 +52,27 @@
     [self testDrawRect];
 }
 
+
+
+#pragma mark - test UIFactoryModel
+- (void)testUIFactoryModel {
+    XHSSUIFactoryViewModel *UIModel = [[XHSSUIFactoryViewModel alloc] init];
+    UIModel.componentType = @"";
+    UIModel.componentName = @"";
+    UIModel.componentLayoutRefView = @"";
+    UIModel.componentConfig = ^(XHSSConfigManagerBridge *configManager) {
+        configManager.text = @"";
+    };
+    UIModel.componentLayout = ^(XHSSLayoutManagerBridge *LayoutManager) {
+        
+    };
+    UIModel.componentAction = @"";
+    UIModel.subComponent = nil;
+    UIModel.componentData = nil;
+    
+    UIModel.valuevaluevaluevaluevaluevaluevaluevaluevalue = @"";
+    [UIModel uiuiuiuiuuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiui];
+}
 
 #pragma mark - test draw rect
 - (void)testDrawRect {
