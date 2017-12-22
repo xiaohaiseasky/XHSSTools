@@ -208,19 +208,21 @@
         CGContextAddPath(currentContext, path.CGPath);
         CGContextDrawPath(currentContext, kCGPathFill);
         CGContextRestoreGState(currentContext);
-        
-        [self clearInnerRect:currentContext withPath:path];
     }
 
     // *** center area ***
     CGContextSaveGState(currentContext);
     // ** clear center background color **
     if (self.content == nil && self.cleareCenter) {
-        CGContextClearRect(currentContext, self.innerRect);
+        //CGContextClearRect(currentContext, self.innerRect);
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
+        [self clearInnerRect:currentContext withPath:path];
     }
     // ** set center background color **
     else if ([self.content isKindOfClass:[UIColor class]]) {
         CGContextSetFillColorWithColor(currentContext, [(UIColor*)self.content CGColor]);
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
+        CGContextAddPath(currentContext, path.CGPath);
         CGContextDrawPath(currentContext, kCGPathFill);
     }
     // ** set center background image **
@@ -238,13 +240,13 @@
         CGContextSaveGState(currentContext);
 
         CGContextClipToRect(currentContext, self.innerRect);
-        
+
         CGColorSpaceRef colorRef = CGColorSpaceCreateDeviceRGB();
         NSArray *colors = @[(__bridge id)[UIColor blueColor].CGColor, (__bridge id)[UIColor redColor].CGColor];
         colors = [self convertColorsIntoCGColorInArr:self.gradientColors];
         CGFloat locations[] = {0.0, 1.0};
         CGGradientRef gradient = CGGradientCreateWithColors(colorRef, (__bridge CFArrayRef)colors, locations);
-        
+
         switch (self.gradientDirection) {
             // * no gradient *
             case XHSSDrawGradientDirectionNOne:{
@@ -289,15 +291,15 @@
         CGColorSpaceRelease(colorRef);
         CGGradientRelease(gradient);
         CGContextRestoreGState(currentContext);
-        
-        CGContextSaveGState(currentContext);
-        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
-        UIBezierPath *outterPath = [UIBezierPath bezierPathWithRoundedRect:self.outterRect cornerRadius:self.outterRectRadius];
-        CGContextAddPath(currentContext, path.CGPath);
-        CGContextAddPath(currentContext, outterPath.CGPath);
-        CGContextSetBlendMode(currentContext, kCGBlendModeClear);
-        CGContextDrawPath(currentContext, kCGPathEOFill);
-        CGContextRestoreGState(currentContext);
+
+//        CGContextSaveGState(currentContext);
+//        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.innerRect cornerRadius:self.innerRectRadius];
+//        UIBezierPath *outterPath = [UIBezierPath bezierPathWithRoundedRect:self.outterRect cornerRadius:self.outterRectRadius];
+//        CGContextAddPath(currentContext, path.CGPath);
+//        CGContextAddPath(currentContext, outterPath.CGPath);
+//        CGContextSetBlendMode(currentContext, kCGBlendModeClear);
+//        CGContextDrawPath(currentContext, kCGPathEOFill);
+//        CGContextRestoreGState(currentContext);
     }
 }
 
@@ -326,6 +328,7 @@
 }
 
 - (void)drawLinearGradientInContext:(CGContextRef)context withGradient:(CGGradientRef)gradient startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint options:(CGGradientDrawingOptions)options {
+    CGContextSetBlendMode(context, kCGBlendModeColorDodge);
     CGContextDrawLinearGradient(context,
                                 gradient,
                                 startPoint,
@@ -334,6 +337,7 @@
 }
 
 - (void)drawRadialGradientInContext:(CGContextRef)context withGradient:(CGGradientRef)gradient startCenter:(CGPoint)startCenter startRadius:(CGFloat)startRadius endCenter:(CGPoint)endCenter endRadius:(CGFloat)endRadius options:(CGGradientDrawingOptions)options {
+    CGContextSetBlendMode(context, kCGBlendModeMultiply);
     CGContextDrawRadialGradient(context,
                                 gradient,
                                 startCenter,

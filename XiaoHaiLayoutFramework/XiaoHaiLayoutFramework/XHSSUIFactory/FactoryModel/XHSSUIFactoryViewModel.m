@@ -10,6 +10,7 @@
 
 #import "XHSSUIFactoryViewModel.h"
 
+
 @implementation XHSSUIFactoryViewModel
 
 @end

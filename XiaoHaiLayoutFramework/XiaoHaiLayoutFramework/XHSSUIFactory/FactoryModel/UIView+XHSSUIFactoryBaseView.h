@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class XHSSUIFactoryViewModel;
+
 @interface UIView (XHSSUIFactoryBaseView)
 
+@property (nonatomic, strong, readonly) XHSSUIFactoryViewModel *viewModel;
 
+- (void)setupWithViewModel:(XHSSUIFactoryViewModel*)viewModel;
+- (void)configWithDataModel:(id)dataModel;
+- (void)needRelyoutWithViewModel:(XHSSUIFactoryViewModel*)viewModel;
 
 @end

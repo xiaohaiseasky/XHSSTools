@@ -10,21 +10,11 @@
 //#import "XHSSUIFactory.h"
 #import "XHSSManagerBridge.h"
 
-@protocol UIProtocol <NSObject>
-@optional
-@property (nonatomic, strong) NSString *valuevaluevaluevaluevaluevaluevaluevaluevalue;
-- (void)uiuiuiuiuuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiui;
-@end
-
-
-
-
-
 
 typedef void(^XHSSConfigBridgeBlock)(XHSSConfigManagerBridge *configManager);
 typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge *LayoutManager);
 
-@interface XHSSUIFactoryViewModel : NSObject <UIProtocol>
+@interface XHSSUIFactoryViewModel : NSObject
 
 @property (nonatomic, strong) NSString *componentType;
 @property (nonatomic, strong) NSString *componentName;
@@ -33,6 +23,6 @@ typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge *LayoutManager);
 @property (nonatomic, strong) XHSSLayoutBridgeBlock componentLayout;
 @property (nonatomic, strong) NSString *componentAction;
 @property (nonatomic, strong) XHSSUIFactoryViewModel *subComponent;
-@property (nonatomic, strong) id componentData;
+@property (nonatomic, strong) NSString *componentDataKeyPath;
 
 @end

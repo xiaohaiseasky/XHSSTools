@@ -37,6 +37,7 @@
 		18EB94921FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB94911FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m */; };
 		18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */; };
 		18F2C8131FECA577006E3DE9 /* XHSSManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */; };
+		18F2C8161FECC0CF006E3DE9 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18F2C8151FECC0CF006E3DE9 /* pic.jpg */; };
 		18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */; };
 		18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */; };
 		18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */; };
@@ -124,6 +125,7 @@
 		18EDF2FB1F9F35B4001CC444 /* XHSSImageBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSImageBrowserVC.m; sourceTree = "<group>"; };
 		18F2C8111FECA577006E3DE9 /* XHSSManagerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSManagerBridge.h; sourceTree = "<group>"; };
 		18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSManagerBridge.m; sourceTree = "<group>"; };
+		18F2C8151FECC0CF006E3DE9 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
 		18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionSheet数据源.plist"; sourceTree = "<group>"; };
 		18F52A841FE8E778001C9855 /* UIViewController+XHSSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHSSActionSheet.h"; sourceTree = "<group>"; };
 		18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XHSSActionSheet.m"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		18399D991FD4D7C2004E245E /* XHSSUIFactory */ = {
 			isa = PBXGroup;
 			children = (
+				18F2C8141FECC06F006E3DE9 /* Resource */,
 				18EB948C1FEBBAE4001FACE2 /* FactoryModel */,
 				181E97F91FD91D9C005A6F70 /* UIView+XHSSFrameTool.h */,
 				181E98011FD91D9D005A6F70 /* UIView+XHSSFrameTool.m */,
@@ -367,6 +370,15 @@
 			);
 			path = FactoryModel;
 			sourceTree = "<group>";
+		};
+		18F2C8141FECC06F006E3DE9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18F2C8151FECC0CF006E3DE9 /* pic.jpg */,
+			);
+			name = Resource;
+			path = XiaoHaiLayoutFramework/Resource;
+			sourceTree = SOURCE_ROOT;
 		};
 		18F52A821FE8E778001C9855 /* UIView+ActionSheet */ = {
 			isa = PBXGroup;
@@ -529,6 +541,7 @@
 				18E9F95A1F94D98B00BD3E74 /* Assets.xcassets in Resources */,
 				18E9F9581F94D98B00BD3E74 /* Main.storyboard in Resources */,
 				18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */,
+				18F2C8161FECC0CF006E3DE9 /* pic.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

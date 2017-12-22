@@ -440,7 +440,7 @@
 // =============================================
 //      XHSSLayoutManagerBridge
 // =============================================
-@interface XHSSLayoutManagerBridge : NSObject
+@interface XHSSLayoutManagerBridge : NSObject <XHSSLayoutProtocol>
 
 @end
 

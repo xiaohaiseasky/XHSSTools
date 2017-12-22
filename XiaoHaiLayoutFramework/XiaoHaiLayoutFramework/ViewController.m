@@ -68,10 +68,7 @@
     };
     UIModel.componentAction = @"";
     UIModel.subComponent = nil;
-    UIModel.componentData = nil;
-    
-    UIModel.valuevaluevaluevaluevaluevaluevaluevaluevalue = @"";
-    [UIModel uiuiuiuiuuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiui];
+    UIModel.componentDataKeyPath = nil;
 }
 
 #pragma mark - test draw rect
@@ -85,12 +82,12 @@
         .backgroundColor([UIColor cyanColor])
         
         //.rect()
-        //.content()
+        .content([UIImage imageNamed:@"pic.jpg"])
         .innerRectRadius(10)
         .outterRectRadius(10)
-        .cleareCenter(NO)
+        .cleareCenter(YES)
         
-        .gradientDirection(XHSSDrawGradientDirectionRadial)
+//        .gradientDirection(XHSSDrawGradientDirectionRadial)
         .gradientColors(@[[UIColor redColor],[UIColor greenColor],[UIColor blueColor]])
         .linearGradientStartPoint(CGPointMake(CGRectGetMinX(view.frame), CGRectGetMinY(view.frame)))
         .linearGradientEndPoint(CGPointMake(CGRectGetMinX(view.frame), CGRectGetMaxY(view.frame)))
@@ -99,13 +96,13 @@
         .radialGradientEndCenterPoint(CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame)))
         .radialGradientEndRadius(CGRectGetWidth(view.frame)/2.0)
         
-        .maskColor([UIColor blueColor])
+//        .maskColor([UIColor blueColor])
         .innerEdgeInsets(UIEdgeInsetsMake(10, 10, 10, 10))
         .outterEdgeInsets(UIEdgeInsetsMake(30, 30, 30, 30))
         
         .shadowColor([UIColor redColor])
         //.shadowOffset(CGSizeMake(17, 17))
-        .shadowBlur(17)
+        .shadowBlur(23)
         ;
     }];
     [self.view addSubview:view];
