@@ -11,9 +11,6 @@
 #import "XHSSManagerBridge.h"
 
 
-typedef void(^XHSSConfigBridgeBlock)(XHSSConfigManagerBridge *configManager);
-typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge *LayoutManager);
-
 @interface XHSSUIFactoryViewModel : NSObject
 
 @property (nonatomic, strong) NSString *componentType;
@@ -25,5 +22,20 @@ typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge *LayoutManager);
 @property (nonatomic, strong) XHSSUIFactoryViewModel *subComponent;
 @property (nonatomic, strong) NSString *componentDataKeyPath;
 @property (nonatomic, strong) id dataModel;
+
+
+
+// type
+// name
+// super
+// config
+// refView
+// layout
+// action
+@property (nonatomic, strong, readonly) NSMutableDictionary *subComponentsInfoDic;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString*> *subComponentNameArr;
+
+- (void)addSubComponent:(id)subCommponent forName:(NSString*)componentName;
+- (void)removeSubComponent:(NSString *)componentName;
 
 @end

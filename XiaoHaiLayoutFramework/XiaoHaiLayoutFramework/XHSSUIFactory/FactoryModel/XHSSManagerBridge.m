@@ -16,6 +16,11 @@
 // =============================================
 @implementation XHSSManagerBridge
 
+#warning *** should check the componentClazz is kind of UIView class
++ (UIView*_Nonnull)createComponentWithClass:(Class _Nonnull)componentClazz {
+    return [[componentClazz alloc] init];
+}
+
 @end
 
 

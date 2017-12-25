@@ -16,7 +16,7 @@
 #import "XHSSUIFactory.h"
 
 #import "UIView+XHSSShadowMask.h"
-#import "XHSSUIFactoryViewModel.h"
+#import "UIView+XHSSUIFactoryBaseView.h"
 
 
 @interface ViewController ()
@@ -49,7 +49,7 @@
     [self.view addSubview:rightView];
     
     
-    [self testDrawRect];
+    [self testUIFactoryModel];
 }
 
 
@@ -57,18 +57,35 @@
 #pragma mark - test UIFactoryModel
 - (void)testUIFactoryModel {
     XHSSUIFactoryViewModel *UIModel = [[XHSSUIFactoryViewModel alloc] init];
-    UIModel.componentType = @"";
-    UIModel.componentName = @"";
-    UIModel.componentLayoutRefView = @"";
-    UIModel.componentConfig = ^(XHSSConfigManagerBridge *configManager) {
-        configManager.text = @"";
-    };
-    UIModel.componentLayout = ^(XHSSLayoutManagerBridge *LayoutManager) {
-        
-    };
-    UIModel.componentAction = @"";
-    UIModel.subComponent = nil;
-    UIModel.componentDataKeyPath = nil;
+//    UIModel.componentType = @"";
+//    UIModel.componentName = @"";
+//    UIModel.componentLayoutRefView = @"";
+//    UIModel.componentConfig = ^(XHSSConfigManagerBridge *configManager) {
+//        configManager.text = @"";
+//    };
+//    UIModel.componentLayout = ^(XHSSLayoutManagerBridge *LayoutManager) {
+//        
+//    };
+//    UIModel.componentAction = @"";
+//    UIModel.subComponent = nil;
+//    UIModel.componentDataKeyPath = nil;
+    
+    
+    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
+                     .addToSuperView(self.view)
+     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+        configManager.text = @"lalbel";
+        configManager.textAlignment = NSTextAlignmentCenter;
+        configManager.backgroundColor = [UIColor redColor];
+    })
+     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+        layoutManager.topEqualToNum(10).leftEqualToNum(10).bottomEqualToNum(10).rightEqualToNum(10);
+    })
+                     forName:@"label"];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 170, 170)];
+    [view setupWithViewModel:UIModel];
+    [self.view addSubview:view];
 }
 
 #pragma mark - test draw rect

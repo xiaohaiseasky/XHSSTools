@@ -361,12 +361,12 @@
 		18EB948C1FEBBAE4001FACE2 /* FactoryModel */ = {
 			isa = PBXGroup;
 			children = (
+				18F2C8111FECA577006E3DE9 /* XHSSManagerBridge.h */,
+				18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */,
 				18EB948D1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.h */,
 				18EB948E1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m */,
 				18EB94901FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.h */,
 				18EB94911FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m */,
-				18F2C8111FECA577006E3DE9 /* XHSSManagerBridge.h */,
-				18F2C8121FECA577006E3DE9 /* XHSSManagerBridge.m */,
 			);
 			path = FactoryModel;
 			sourceTree = "<group>";
