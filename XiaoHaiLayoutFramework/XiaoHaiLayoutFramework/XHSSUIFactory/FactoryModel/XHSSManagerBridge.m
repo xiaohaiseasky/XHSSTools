@@ -44,6 +44,19 @@
     }
 }
 
+
+
+
+/// *** mybe here should not use singletone , use singletone just for get component by name ***
++ (instancetype)sharedConfigManagerBridge {
+    static XHSSConfigManagerBridge *configManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        configManager = [[XHSSConfigManagerBridge alloc] init];
+    });
+    return configManager;
+}
+
 @end
 
 
@@ -67,6 +80,17 @@
         NSLog(@"******* 使用了该控件没有布局方法 *******");
         [super forwardInvocation:anInvocation];
     }
+}
+
+
+/// *** mybe here should not use singletone , use singletone just for get component by name ***
++ (instancetype)sharedLayoutManagerBridge {
+    static XHSSLayoutManagerBridge *layoutManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        layoutManager = [[XHSSLayoutManagerBridge alloc] init];
+    });
+    return layoutManager;
 }
 
 @end

@@ -1104,7 +1104,7 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
     };
 }
 /// *** not implementation ***
-- (UIView*(^)(CGFloat  rightValue))moveRightToyNum {
+- (UIView*(^)(CGFloat  rightValue))moveRightToNum {
     return ^(CGFloat rightValue) {
         self.xhssMaxX = rightValue;
         return self;

@@ -435,7 +435,7 @@
 - (UIView*(^)(CGFloat  rightValue))moveRightByNumScreenFit;
 
 /// ***
-- (UIView*(^)(CGFloat  rightValue))moveRightToyNum;
+- (UIView*(^)(CGFloat  rightValue))moveRightToNum;
 /// ***
 - (UIView*(^)(CGFloat  rightValue))moveRightToNumScreenFit;
 

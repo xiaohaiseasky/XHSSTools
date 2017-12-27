@@ -292,8 +292,8 @@
 /**
  设置上边距时，上侧的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull topRefView))toTopRefView;             // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull topRefView))toTopRefViewScreenFit;    // 按屏幕比例适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull topRefView))toTopRefView;             // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull topRefView))toTopRefViewScreenFit;    // 按屏幕比例适配
 
 #pragma mark - left
 /**
@@ -304,8 +304,8 @@
 /**
  设置左边距时，左侧的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull leftRefView))toLeftRefView;             // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull leftRefView))toLeftRefViewScreenFit;    // 按屏幕比例适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull leftRefView))toLeftRefView;             // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull leftRefView))toLeftRefViewScreenFit;    // 按屏幕比例适配
 
 #pragma mark - bottom
 /**
@@ -316,8 +316,8 @@
 /**
  设置下边距时，下侧的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull bottomRefView))toBottomRefView;             // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull bottomRefView))toBottomRefViewScreenFit;    // 按屏幕比例适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull bottomRefView))toBottomRefView;             // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull bottomRefView))toBottomRefViewScreenFit;    // 按屏幕比例适配
 
 #pragma mark - right
 /**
@@ -328,8 +328,8 @@
 /**
  设置右边距时，右侧的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull rightRefView))toRightRefView;             // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull rightRefView))toRightRefViewScreenFit;    // 按屏幕比例适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull rightRefView))toRightRefView;             // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull rightRefView))toRightRefViewScreenFit;    // 按屏幕比例适配
 
 #pragma mark - width
 /**
@@ -340,7 +340,7 @@
 /**
  设置 width 时的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull refView))equalToRefViewWidth;             // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))equalToRefViewWidth;             // 固定像素适配
 // 无需按比例进行适配
 
 #pragma mark - height
@@ -352,7 +352,7 @@
 /**
  设置 height 时的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull refView))equalToRefViewHeight;            // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))equalToRefViewHeight;            // 固定像素适配
 // 无需按比例进行适配
 
 #pragma mark - center
@@ -364,7 +364,7 @@
 /**
  设置 center 时的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull refView))equalToRefViewCenter;            // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))equalToRefViewCenter;            // 固定像素适配
 // 无需按比例进行适配
 
 
@@ -377,7 +377,7 @@
 /**
  设置 origin 时的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull refView))equalToRefViewOrigin;            // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))equalToRefViewOrigin;            // 固定像素适配
 // 无需按比例进行适配
 
 #pragma mark - bounds
@@ -389,7 +389,7 @@
 /**
  设置 bounds 时的参考视图
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView * _Nonnull refView))equalToRefViewBounds;            // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))equalToRefViewBounds;            // 固定像素适配
 // 无需按比例进行适配
 
 #pragma mark - ==============固定数值===============
@@ -462,72 +462,72 @@
 /**
  top
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topEqualToView;                     // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topEqualToView;                     // 固定像素适配
 #if 1
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topEqualToViewTop;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topEqualToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topEqualToViewBottom;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topEqualToViewTop;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topEqualToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topEqualToViewBottom;
 #endif
 
 /**
  left
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftEqualToView;                    // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftEqualToView;                    // 固定像素适配
 #if 1
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftEqualToViewLeft;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftEqualToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftEqualToViewRight;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftEqualToViewLeft;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftEqualToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftEqualToViewRight;
 #endif
 
 /**
  bottom
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomEqualToView;                  // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomEqualToView;                  // 固定像素适配
 #if 1
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomEqualToViewTop;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomEqualToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomEqualToViewBottom;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomEqualToViewTop;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomEqualToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomEqualToViewBottom;
 #endif
 
 /**
  right
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightEqualToView;                   // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightEqualToView;                   // 固定像素适配
 #if 1
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightEqualToViewLeft;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightEqualToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightEqualToViewRight;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightEqualToViewLeft;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightEqualToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightEqualToViewRight;
 #endif
 
 /**
  width
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))widthEqualToView;                   // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))widthEqualToView;                   // 固定像素适配
 
 /**
  height
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))heightEqualToView;                  // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))heightEqualToView;                  // 固定像素适配
 
 /**
  center
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))centerEqualToView;                  // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))centerEqualToView;                  // 固定像素适配
 
 /**
  center point
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))centerEqualToViewCenterPoint;       // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))centerEqualToViewCenterPoint;       // 固定像素适配
 
 /**
  origin
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))originEqualToView;                  // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))originEqualToView;                  // 固定像素适配
 
 /**
  size
  */
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))sizeEqualToView;                    // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))sizeEqualToView;                    // 固定像素适配
 
 #pragma mark - ==============对齐===============
 // => alignmentTo[by]Num().alignmentTo[by]NumScreenFit().alignmentToView[top/left/bottom/right]()
@@ -537,10 +537,10 @@
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))topAligmentToNum;               // 固定像素适配
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))topAligmentToNumScreenFit;      // 按屏幕比例适配
 
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topAligmentToView;                  // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topAligmentToViewTop;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topAligmentToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))topAligmentToViewBotton;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topAligmentToView;                  // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topAligmentToViewTop;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topAligmentToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))topAligmentToViewBotton;
 
 /**
  left
@@ -548,10 +548,10 @@
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))leftAligmentToNum;              // 固定像素适配
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))leftAligmentToNumScreenFit;     // 按屏幕比例适配
 
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftAligmentToView;                 // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftAligmentToViewLeft;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftAligmentToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))leftAligmentToViewRight;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftAligmentToView;                 // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftAligmentToViewLeft;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftAligmentToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))leftAligmentToViewRight;
 
 /**
  bottom
@@ -559,10 +559,10 @@
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))bottomAligmentToNum;            // 固定像素适配
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  bottomValue))bottomAligmentToNumScreenFit;   // 按屏幕比例适配
 
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomAligmentToView;               // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomAligmentToViewTop;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomAligmentToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))bottomAligmentToViewBotton;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomAligmentToView;               // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomAligmentToViewTop;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomAligmentToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))bottomAligmentToViewBotton;
 
 /**
  right
@@ -570,10 +570,10 @@
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  rightValue))rightAligmentToNum;              // 固定像素适配
 - (UIView*_Nonnull(^_Nonnull)(CGFloat  rightValue))rightAligmentToNumScreenFit;     // 按屏幕比例适配
 
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightAligmentToView;                // 固定像素适配
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightAligmentToViewLeft;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightAligmentToViewCenter;
-- (UIView*_Nonnull(^_Nonnull)(UIView  * _Nonnull refView))rightAligmentToViewRight;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightAligmentToView;                // 固定像素适配
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightAligmentToViewLeft;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightAligmentToViewCenter;
+- (UIView*_Nonnull(^_Nonnull)(id/*UIView **/ _Nonnull refView))rightAligmentToViewRight;
 
 
 #pragma mark - ==============平移===============
@@ -652,7 +652,11 @@ typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge * _Nonnull layoutMa
 // =============================================
 @interface XHSSConfigManagerBridge : XHSSManagerBridge <XHSSViewConfigProtocol, XHSSLabelConfigProtocol, XHSSButtonConfigProtocol>
 
+/// *** The property has move to super class ***
 //@property (nonatomic, strong) UIView * _Nonnull targetView;
+
+/// *** mybe here should not use singletone , use singletone just for get component by name ***
++ (instancetype _Nonnull )sharedConfigManagerBridge;
 
 @end
 
@@ -666,7 +670,11 @@ typedef void(^XHSSLayoutBridgeBlock)(XHSSLayoutManagerBridge * _Nonnull layoutMa
 // =============================================
 @interface XHSSLayoutManagerBridge : XHSSManagerBridge <XHSSLayoutProtocol>
 
+/// *** The property has move to super class ***
 //@property (nonatomic, strong) UIView * _Nonnull targetView;
+
+/// *** mybe here should not use singletone , use singletone just for get component by name ***
++ (instancetype _Nonnull )sharedLayoutManagerBridge;
 
 @end
 

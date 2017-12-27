@@ -24,28 +24,6 @@
 - (void)setupWithViewModel:(XHSSUIFactoryViewModel*)viewModel {
     self.viewModel = viewModel;
     
-//    //NSString *componentType = viewModel.componentType;
-//    //NSString *componentName = viewModel.componentName;
-//    XHSSConfigBridgeBlock componentConfig = viewModel.componentConfig;
-//    //NSString *componentLayoutRefView = viewModel.componentLayoutRefView;
-//    XHSSLayoutBridgeBlock componentLayout = viewModel.componentLayout;
-//    //NSString *componentAction = viewModel.componentAction;
-//    //XHSSUIFactoryViewModel *subComponent = viewModel.subComponent;
-//    //NSString *componentDataKeyPath = viewModel.componentDataKeyPath;
-//    //id dataModel = viewModel.dataModel;
-//
-//    if (componentConfig) {
-//        XHSSConfigManagerBridge *configManager = [[XHSSConfigManagerBridge alloc] init];
-//        //configManager.targetView =
-//        componentConfig(configManager);
-//    }
-//
-//    if (componentLayout) {
-//        XHSSLayoutManagerBridge *layoutManager = [[XHSSLayoutManagerBridge alloc] init];
-//        //layoutManager.targetView =
-//        componentLayout(layoutManager);
-//    }
-    
     [viewModel.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull subComponentName, NSUInteger idx, BOOL * _Nonnull stop) {
         objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(subComponentName), viewModel.subComponentsInfoDic[subComponentName], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }];
@@ -63,8 +41,6 @@
 @end
 
 
-
-
 /**
  添加到父视图、配置、布局 链式调用
  */
@@ -79,9 +55,19 @@
 - (UIView*_Nonnull(^_Nonnull)(XHSSLayoutBridgeBlock _Nonnull layout))addLayout {
     return ^ (XHSSLayoutBridgeBlock _Nonnull layout) {
         if (layout) {
-            XHSSLayoutManagerBridge *layoutManager = [[XHSSLayoutManagerBridge alloc] init];
+#if 1
+//            XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
+//                                                      */ [[XHSSLayoutManagerBridge alloc] init];
+//            layoutManager.targetView = self;
+//            layout(layoutManager);
+            
+            objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(XHSSBindLayoutBridgeBlockKey), [layout copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+#else       /// *** here do not excute the layout block , instad save it to the view which is need layout and excute it when right time ***
+            XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
+                                                     */ [[XHSSLayoutManagerBridge alloc] init];
             layoutManager.targetView = self;
             layout(layoutManager);
+#endif
         }
         return self;
     };
@@ -89,7 +75,8 @@
 - (UIView*_Nonnull(^_Nonnull)(XHSSConfigBridgeBlock _Nonnull config))addConfig {
     return ^ (XHSSConfigBridgeBlock _Nonnull config) {
         if (config) {
-            XHSSConfigManagerBridge *configManager = [[XHSSConfigManagerBridge alloc] init];
+            XHSSConfigManagerBridge *configManager = /*[XHSSConfigManagerBridge sharedConfigManagerBridge];
+                                                     */ [[XHSSConfigManagerBridge alloc] init];
             configManager.targetView = self;
             config(configManager);
         }

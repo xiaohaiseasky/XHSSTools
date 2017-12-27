@@ -7,23 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "XHSSUIFactory.h"
 #import "XHSSManagerBridge.h"
 
 
+UIKIT_EXTERN NSString * _Nonnull const XHSSBindViewModelKey;
+UIKIT_EXTERN NSString * _Nullable const XHSSBindLayoutBridgeBlockKey;
+
+
 @interface XHSSUIFactoryViewModel : NSObject
-
-@property (nonatomic, strong) NSString *componentType;
-@property (nonatomic, strong) NSString *componentName;
-@property (nonatomic, strong) XHSSConfigBridgeBlock componentConfig;
-@property (nonatomic, strong) NSString *componentLayoutRefView;
-@property (nonatomic, strong) XHSSLayoutBridgeBlock componentLayout;
-@property (nonatomic, strong) NSString *componentAction;
-@property (nonatomic, strong) XHSSUIFactoryViewModel *subComponent;
-@property (nonatomic, strong) NSString *componentDataKeyPath;
-@property (nonatomic, strong) id dataModel;
-
-
 
 // type
 // name
@@ -32,10 +23,21 @@
 // refView
 // layout
 // action
-@property (nonatomic, strong, readonly) NSMutableDictionary *subComponentsInfoDic;
-@property (nonatomic, strong, readonly) NSMutableArray<NSString*> *subComponentNameArr;
+// animation
+@property (nonatomic, strong, readonly) NSMutableDictionary * _Nonnull subComponentsInfoDic;
+@property (nonatomic, strong, readonly) NSMutableArray<NSString*> * _Nonnull subComponentNameArr;
 
-- (void)addSubComponent:(id)subCommponent forName:(NSString*)componentName;
-- (void)removeSubComponent:(NSString *)componentName;
+- (void)bindToView:(UIView*_Nonnull)view;
+
+- (void)addSubComponent:(id _Nonnull )subCommponent forName:(NSString*_Nonnull)componentName;
+- (void)removeSubComponent:(NSString *_Nonnull)componentName;
+
+- (UIView*_Nonnull)rootView;
+
+- (id _Nonnull )subComponentForKey:(NSString*_Nonnull)key;
+- (id _Nonnull )subComponentForKeyPath:(NSString*_Nonnull)keyPath;
+
+- (id _Nonnull (^_Nonnull)(NSString * _Nonnull key))subComponentForKey;
+- (id _Nonnull (^_Nonnull)(NSString * _Nonnull keyPath))subComponentForKeyPath;
 
 @end

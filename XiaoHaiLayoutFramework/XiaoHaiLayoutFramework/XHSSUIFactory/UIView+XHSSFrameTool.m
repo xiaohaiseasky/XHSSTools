@@ -137,7 +137,7 @@
 }
 - (void)setXhssCenter:(CGPoint)xhssCenter {
     CGRect oldFrame = self.frame;
-    oldFrame.origin.y = xhssCenter.x - self.frame.size.width/2.0;
+    oldFrame.origin.x = xhssCenter.x - self.frame.size.width/2.0;
     oldFrame.origin.y = xhssCenter.y - self.frame.size.height/2.0;
     self.frame = oldFrame;
 }
