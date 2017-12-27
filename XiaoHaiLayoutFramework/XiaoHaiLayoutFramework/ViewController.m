@@ -93,10 +93,8 @@
     })
                      forName:@"label123"];
     
-    [UIModel bindToView:self.view];
     
-    
-#if 0
+#if 1
     [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
      .addToSuperView(UIModel.subComponentForKey(@"label123"))
      .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
@@ -105,11 +103,16 @@
         configManager.backgroundColor = [UIColor cyanColor];
     })
      .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).leftEqualToNum(10).bottomEqualToNum(10).rightEqualToNum(10);
+        layoutManager
+        .topEqualToNum(10)
+        .leftEqualToNum(10)
+        .bottomEqualToNum(10)
+        .rightEqualToNum(10);
     })
                      forName:@"***lalbel***"];
 #endif
     
+    [UIModel bindToView:self.view];
     
 #if 0
     XHSSUIFactoryViewModel *ui = [[XHSSUIFactoryViewModel alloc] init];
@@ -120,7 +123,12 @@
         configManager.backgroundColor = [UIColor orangeColor];
     })
      .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).leftEqualToNum(10).bottomEqualToNum(10).rightEqualToNum(10).widthEqualToNum(150);
+        layoutManager
+        .topEqualToNum(10)
+        .leftEqualToNum(10)
+        .bottomEqualToNum(10)
+        .rightEqualToNum(10)
+        .widthEqualToNum(150);
     })
                 forName:@"imageView"];
 #endif

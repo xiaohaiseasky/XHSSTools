@@ -35,5 +35,7 @@
 - (UIView*_Nonnull(^_Nonnull)(XHSSLayoutBridgeBlock _Nonnull layout))addLayout;
 - (UIView*_Nonnull(^_Nonnull)(XHSSConfigBridgeBlock _Nonnull config))addConfig;
 
+- (UIView*_Nonnull(^_Nonnull)())needRefreshLayout;
+
 @end
 

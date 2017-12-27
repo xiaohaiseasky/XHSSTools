@@ -56,11 +56,6 @@
     return ^ (XHSSLayoutBridgeBlock _Nonnull layout) {
         if (layout) {
 #if 1
-//            XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
-//                                                      */ [[XHSSLayoutManagerBridge alloc] init];
-//            layoutManager.targetView = self;
-//            layout(layoutManager);
-            
             objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(XHSSBindLayoutBridgeBlockKey), [layout copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 #else       /// *** here do not excute the layout block , instad save it to the view which is need layout and excute it when right time ***
             XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
@@ -79,6 +74,20 @@
                                                      */ [[XHSSConfigManagerBridge alloc] init];
             configManager.targetView = self;
             config(configManager);
+        }
+        return self;
+    };
+}
+
+
+- (UIView*_Nonnull(^_Nonnull)())needRefreshLayout {
+    return ^ () {
+        XHSSLayoutBridgeBlock layoutBlock = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(XHSSBindLayoutBridgeBlockKey));
+        if (layoutBlock) {
+            XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
+                                                      */ [[XHSSLayoutManagerBridge alloc] init];
+            layoutManager.targetView = self;
+            layoutBlock(layoutManager);
         }
         return self;
     };

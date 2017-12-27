@@ -27,15 +27,22 @@ UIKIT_EXTERN NSString * _Nullable const XHSSBindLayoutBridgeBlockKey;
 @property (nonatomic, strong, readonly) NSMutableDictionary * _Nonnull subComponentsInfoDic;
 @property (nonatomic, strong, readonly) NSMutableArray<NSString*> * _Nonnull subComponentNameArr;
 
+/// *** OC Style ***
 - (void)bindToView:(UIView*_Nonnull)view;
 
 - (void)addSubComponent:(id _Nonnull )subCommponent forName:(NSString*_Nonnull)componentName;
-- (void)removeSubComponent:(NSString *_Nonnull)componentName;
+- (void)removeSubComponentByName:(NSString *_Nonnull)componentName;
 
 - (UIView*_Nonnull)rootView;
 
 - (id _Nonnull )subComponentForKey:(NSString*_Nonnull)key;
 - (id _Nonnull )subComponentForKeyPath:(NSString*_Nonnull)keyPath;
+
+/// *** Chain Call Style ***
+- (XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(UIView * _Nonnull view))bindToView;
+
+-(XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(id _Nonnull subCommponent, NSString * _Nonnull componentName))addSubComponentForName;
+-(XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(NSString * _Nonnull componentName))removeSubComponentByName;
 
 - (id _Nonnull (^_Nonnull)(NSString * _Nonnull key))subComponentForKey;
 - (id _Nonnull (^_Nonnull)(NSString * _Nonnull keyPath))subComponentForKeyPath;

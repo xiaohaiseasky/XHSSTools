@@ -10,6 +10,7 @@
 
 #import "XHSSUIFactoryViewModel.h"
 #import <objc/runtime.h>
+#import "UIView+XHSSUIFactoryBaseView.h"
 
 
 NSString * const XHSSBindViewModelKey = @"XHSSBindViewModelKey";
@@ -41,19 +42,15 @@ NSString * const XHSSBindLayoutBridgeBlockKey = @"XHSSBindLayoutBridgeBlockKey";
 
 
 
+/// *** OC Style ***
 - (void)bindToView:(UIView*)view {
     self.targetView = view;
     
     __weak typeof(self) weakSelf = self;
     [self.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIView * subView = (UIView*)weakSelf.subComponentsInfoDic[viewName];
         [weakSelf.targetView addSubview:weakSelf.subComponentsInfoDic[viewName]];
-        XHSSLayoutBridgeBlock layoutBlock = objc_getAssociatedObject(weakSelf.subComponentsInfoDic[viewName], (__bridge const void * _Nonnull)(XHSSBindLayoutBridgeBlockKey));
-        if (layoutBlock) {
-            XHSSLayoutManagerBridge *layoutManager = /*[XHSSLayoutManagerBridge sharedLayoutManagerBridge];
-                                                      */ [[XHSSLayoutManagerBridge alloc] init];
-            layoutManager.targetView = view;
-            layoutBlock(layoutManager);
-        }
+        subView.needRefreshLayout();
     }];
     
     objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), self/*[self copy]*/, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -69,7 +66,7 @@ NSString * const XHSSBindLayoutBridgeBlockKey = @"XHSSBindLayoutBridgeBlockKey";
     [self.subComponentNameArr addObject:componentName];
 }
 
-- (void)removeSubComponent:(NSString *)componentName {
+- (void)removeSubComponentByName:(NSString *)componentName {
     [self.subComponentsInfoDic removeObjectForKey:componentName];
     [self.subComponentNameArr removeObject:componentName];
 }
@@ -86,6 +83,47 @@ NSString * const XHSSBindLayoutBridgeBlockKey = @"XHSSBindLayoutBridgeBlockKey";
 #warning - not implementation 
     return nil;
 }
+
+
+/// *** Chain Call Style ***
+- (XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(UIView * _Nonnull view))bindToView {
+    __weak typeof(self) weakSelf = self;
+    return ^(UIView * _Nonnull view) {
+        weakSelf.targetView = view;
+        
+        [weakSelf.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
+            UIView * subView = (UIView*)weakSelf.subComponentsInfoDic[viewName];
+            [weakSelf.targetView addSubview:weakSelf.subComponentsInfoDic[viewName]];
+            subView.needRefreshLayout();
+        }];
+        
+        objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), self/*[self copy]*/, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return self;
+    };
+}
+
+-(XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(id _Nonnull subCommponent, NSString * _Nonnull componentName))addSubComponentForName {
+    __weak typeof(self) weakSelf = self;
+    return ^(id _Nonnull subCommponent, NSString * _Nonnull componentName) {
+        /// *** check if the componentName is already exist ***
+        if (![weakSelf.subComponentNameArr containsObject:componentName]) {
+            [weakSelf.subComponentsInfoDic setValue:subCommponent forKey:componentName];
+            [weakSelf.subComponentNameArr addObject:componentName];
+        }
+        
+        return self;
+    };
+}
+
+-(XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(NSString * _Nonnull componentName))removeSubComponentByName {
+    __weak typeof(self) weakSelf = self;
+    return ^(NSString * _Nonnull componentName) {
+        [weakSelf.subComponentsInfoDic removeObjectForKey:componentName];
+        [weakSelf.subComponentNameArr removeObject:componentName];
+        return self;
+    };
+}
+
 
 - (id(^)(NSString *key))subComponentForKey {
     return ^(NSString *key) {
