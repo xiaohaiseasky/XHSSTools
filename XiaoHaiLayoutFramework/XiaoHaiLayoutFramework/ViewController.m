@@ -48,6 +48,13 @@
     rightView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:rightView];
     
+//    UIView *view = [[UIView alloc] init];
+//    view.backgroundColor = [UIColor redColor];
+//    [bottomiew addSubview:view];
+//    [leftView addSubview:[view copy]];
+//
+//    view.topEqualToNum(2).leftEqualToNum(2).widthEqualToNum(10).bottomEqualToNum(2);
+    
     
     [self testUIFactoryModel];
 }
@@ -58,162 +65,286 @@
 - (void)testUIFactoryModel {
     XHSSUIFactoryViewModel *UIModel = [[XHSSUIFactoryViewModel alloc] init];
     
+////    [UIModel bindToView:self.view];
+//    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
+//     .addToSuperView(UIModel.rootView)
+////     .addToSuperView(self.view)
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.text = @"lalbel";
+//        configManager.textAlignment = NSTextAlignmentCenter;
+//        configManager.backgroundColor = [UIColor redColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topEqualToNum(100)
+//        .leftEqualToNum(10)
+//        .bottomEqualToNum(10)
+//        .rightEqualToNum(10)
+//        .heightEqualToNum(100);
+//    })
+//                     forName:@"label"];
+//
+//    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
+//     .addToSuperView(UIModel.rootView)
+////     .addToSuperView(self.view)
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.text = @"lalbel123";
+//        configManager.textAlignment = NSTextAlignmentCenter;
+//        configManager.backgroundColor = [UIColor blueColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topDistance(30)
+//        .toTopRefView(UIModel.subComponentForKey(@"label"))
+//        .leftEqualToNum(10).bottomEqualToNum(10)
+//        .rightEqualToNum(10)
+//        .heightEqualToNum(100);
+//    })
+//                     forName:@"label123"];
+//
+//
+//#if 1
+//    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
+//     .addToSuperView(UIModel.subComponentForKey(@"label"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.text = @"***lalbel***";
+//        configManager.textAlignment = NSTextAlignmentCenter;
+//        configManager.backgroundColor = [UIColor cyanColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topEqualToNum(10)
+//        .leftEqualToNum(10)
+//        .bottomEqualToNum(10)
+//        .rightEqualToNum(10)
+////        .heightEqualToNum(30)
+//        ;
+//    })
+//                     forName:@"label/***lalbel***"];
+//#endif
+//
 //    [UIModel bindToView:self.view];
-    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
-     .addToSuperView(UIModel.rootView)
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.text = @"lalbel";
-        configManager.textAlignment = NSTextAlignmentCenter;
-        configManager.backgroundColor = [UIColor redColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager
-        .topEqualToNum(100)
-        .leftEqualToNum(10)
-        .bottomEqualToNum(10)
-        .rightEqualToNum(10)
-        .heightEqualToNum(100);
-    })
-                     forName:@"label"];
-    
-    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
-     .addToSuperView(UIModel.rootView)
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.text = @"lalbel123";
-        configManager.textAlignment = NSTextAlignmentCenter;
-        configManager.backgroundColor = [UIColor blueColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager
-        .topDistance(30)
-        .toTopRefView(UIModel.subComponentForKey(@"label"))
-        .leftEqualToNum(10).bottomEqualToNum(10)
-        .rightEqualToNum(10)
-        .heightEqualToNum(100);
-    })
-                     forName:@"label123"];
-    
-    
-#if 1
-    [UIModel addSubComponent:[XHSSManagerBridge createComponentWithClass:[UILabel class]]
-     .addToSuperView(UIModel.subComponentForKey(@"label123"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.text = @"***lalbel***";
-        configManager.textAlignment = NSTextAlignmentCenter;
-        configManager.backgroundColor = [UIColor cyanColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager
-        .topEqualToNum(10)
-        .leftEqualToNum(10)
-        .bottomEqualToNum(10)
-        .rightEqualToNum(10);
-    })
-                     forName:@"***lalbel***"];
-#endif
-    
-    [UIModel bindToView:self.view];
-    
-#if 0
-    XHSSUIFactoryViewModel *ui = [[XHSSUIFactoryViewModel alloc] init];
-    [ui bindToView:UIModel.subComponentForKey(@"***lalbel***")];
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.rootView)
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor orangeColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager
-        .topEqualToNum(10)
-        .leftEqualToNum(10)
-        .bottomEqualToNum(10)
-        .rightEqualToNum(10)
-        .widthEqualToNum(150);
-    })
-                forName:@"imageView"];
-#endif
-    
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).leftEqualToNum(10).bottomEqualToNum(10).rightEqualToNum(10).widthEqualToNum(30);
-    })
-                forName:@"imageView1"];
-#endif
+//
+//#if 1
+//    XHSSUIFactoryViewModel *ui = [[XHSSUIFactoryViewModel alloc] init];
+////    [ui bindToView:UIModel.subComponentForKey(@"***lalbel***")];
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.rootView)
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor orangeColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topEqualToNum(10)
+//        .leftEqualToNum(10)
+//        .bottomEqualToNum(10)
+//        .rightEqualToNum(10)
+//        .widthEqualToNum(150);
+//    })
+//                forName:@"imageView"]; // @"label/***lalbel***/imageView"
+//#endif
 
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).leftEqualToNum(10).bottomEqualToNum(10).rightEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView1"));
-    })
-                forName:@"imageView2"];
-#endif
+//#if 1
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topEqualToNum(10)
+//        .leftEqualToNum(10)
+//        .bottomEqualToNum(10)
+//        .rightEqualToNum(10)
+//        .widthEqualToNum(30);
+//    })
+//                forName:@"imageView/imageView1"];
+//#endif
+//
+//#if 1
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager
+//        .topEqualToNum(10)
+////        .leftEqualToNum(10)
+//        .bottomEqualToNum(10)
+////        .rightEqualToNum(10)
+//        .widthEqualToNum(30)
+//        .leftDistance(10)
+//        .toLeftRefView(ui.subComponentForKey(@"imageView/imageView1"));
+//    })
+//                forName:@"imageView/imageView2"];
+//#endif
+//
+//#if 1
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager.
+//        topEqualToNum(10)
+//        .bottomEqualToNum(10)
+//        .widthEqualToNum(30)
+//        .leftDistance(10)
+//        .toLeftRefView(ui.subComponentForKey(@"imageView/imageView2"));
+//    })
+//                forName:@"imageView/imageView3"];
+//#endif
+//
+//#if 0
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView3"));
+//    })
+//                forName:@"imageView4"];
+//#endif
+//
+//#if 0
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView4"));
+//    })
+//                forName:@"imageView5"];
+//#endif
+//
+//#if 0
+//    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+//     .addToSuperView(ui.subComponentForKey(@"imageView"))
+//     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+//        configManager.backgroundColor = [UIColor purpleColor];
+//    })
+//     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+//        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView5"));
+//    })
+//                forName:@"imageView6"];
+//#endif
+//
+//    [ui bindToView:UIModel.subComponentForKey(@"label123")];
+//    [ui bindToView:UIModel.subComponentForKey(@"label/***lalbel***")];
     
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView2"));
-    })
-                forName:@"imageView3"];
-#endif
-   
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView3"));
-    })
-                forName:@"imageView4"];
-#endif
-   
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView4"));
-    })
-                forName:@"imageView5"];
-#endif
-    
-#if 0
-    [ui addSubComponent:[XHSSManagerBridge createComponentWithClass:[UIImageView class]]
-     .addToSuperView(ui.subComponentForKey(@"imageView"))
-     .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
-        configManager.backgroundColor = [UIColor purpleColor];
-    })
-     .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
-        layoutManager.topEqualToNum(10).bottomEqualToNum(10).widthEqualToNum(30).leftDistance(10).toLeftRefView(ui.subComponentForKey(@"imageView5"));
-    })
-                forName:@"imageView6"];
-#endif
     
     
-//    [ui bindToView:UIModel.subComponentForKey(@"label")];
+    UIModel
+    .addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UILabel class]]
+                            .addToSuperView(UIModel.rootView)
+                            .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                configManager.text = @"!!!!!!!!!!!!!";
+                                configManager.textAlignment = NSTextAlignmentCenter;
+                                configManager.backgroundColor = [UIColor redColor];
+                            })
+                            .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                layoutManager
+                                .topEqualToNum(100)
+                                .leftEqualToNum(10)
+                                .bottomEqualToNum(10)
+                                .rightEqualToNum(10)
+                                .heightEqualToNum(100);
+                            }),
+    @"LABEL!!!")
+    .addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UILabel class]]
+                            .addToSuperView(UIModel.rootView)
+                            .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                configManager.text = @"@@@@@@@@@";
+                                configManager.textAlignment = NSTextAlignmentCenter;
+                                configManager.backgroundColor = [UIColor blueColor];
+                            })
+                            .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                layoutManager
+                                .topDistance(30).toTopRefView(UIModel.subComponentForKey(@"LABEL!!!"))
+                                .leftEqualToNum(10)
+                                .bottomEqualToNum(10)
+                                .rightEqualToNum(10)
+                                .heightEqualToNum(100);
+                            }),
+    @"LABEL@@@")
+    .addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UILabel class]]
+                            .addToSuperView(UIModel.subComponentForKey(@"LABEL@@@"))
+                            .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                configManager.text = @"#############";
+                                configManager.textAlignment = NSTextAlignmentCenter;
+                                configManager.backgroundColor = [UIColor cyanColor];
+                            })
+                            .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                layoutManager
+                                .topEqualToNum(10)
+                                .leftEqualToNum(10)
+                                .bottomEqualToNum(10)
+                                .rightEqualToNum(10)
+                            ;
+                            }),
+    @"LABEL###")
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 170, 170)];
-    [view setupWithViewModel:UIModel];
-    [self.view addSubview:view];
+    .bindToView(self.view)
+    ;
+    
+    
+    XHSSUIFactoryViewModel *ui = [[XHSSUIFactoryViewModel alloc] init];
+    ui.addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+                              .addToSuperView(ui.rootView)
+                              .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                    configManager.backgroundColor = [UIColor orangeColor];
+                              })
+                              .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                    layoutManager
+                                    .topEqualToNum(10)
+                                    .leftEqualToNum(10)
+                                    .bottomEqualToNum(10)
+                                    .rightEqualToNum(10)
+                                    ;
+                              })
+    ,@"IMAGEVIEW")
+    .addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+                            .addToSuperView(ui.subComponentForKey(@"IMAGEVIEW"))
+                            .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                configManager.backgroundColor = [UIColor redColor];
+                            })
+                            .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                layoutManager
+                                .topEqualToNum(10)
+                                .leftEqualToNum(10)
+                                .bottomEqualToNum(10)
+                                .rightEqualToNum(10)
+                                .widthEqualToNum([(UIView*)ui.subComponentForKey(@"IMAGEVIEW") xhssWidth]/3.0)
+                                ;
+                            })
+    ,@"IMAGEVIEW111")
+    .addSubComponentForName([XHSSManagerBridge createComponentWithClass:[UIImageView class]]
+                            .addToSuperView(ui.subComponentForKey(@"IMAGEVIEW"))
+                            .addConfig(^(XHSSConfigManagerBridge * _Nonnull configManager) {
+                                configManager.backgroundColor = [UIColor redColor];
+                            })
+                            .addLayout(^(XHSSLayoutManagerBridge * _Nonnull layoutManager){
+                                layoutManager
+                                .topEqualToNum(10)
+                                .leftEqualToNum(10)
+                                .bottomEqualToNum(10)
+                                .rightEqualToNum(10)
+                                .widthEqualToNum([(UIView*)ui.subComponentForKey(@"IMAGEVIEW") xhssWidth]/3.0)
+                                .rightAligmentToNum(10)
+                                ;
+                            })
+    ,@"IMAGEVIEW222")
+    .bindToView(UIModel.subComponentForKey(@"LABEL###"))
+    .bindToView(UIModel.subComponentForKey(@"LABEL!!!"))
+    ;
 }
 
 #pragma mark - test draw rect
+#if 0
 - (void)testDrawRect {
 //    XHSSShadowView *shadowView = [[XHSSShadowView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
 //    [self.view addSubview:shadowView];
@@ -249,6 +380,7 @@
     }];
     [self.view addSubview:view];
 }
+#endif
 
 #pragma mark - test Layout
 - (void)testLayout {
@@ -269,9 +401,6 @@
     //    UILabel *targetView = [[UILabel alloc] init];
     //    targetView.backgroundColor = [UIColor redColor];
     //    [self.view addSubview:targetView];
-    
-    CGFloat width = self.view.frame.size.width;
-    CGFloat height = self.view.frame.size.height;
     
     
     
@@ -384,6 +513,7 @@
 
 
 #pragma mark - test textField
+#if 0
 - (void)testTextField {
     XHSSTextField *targetView = [[XHSSTextField alloc] init];
     targetView.targetViewByKeyboard = self.view;
@@ -429,5 +559,6 @@
     XHSSTextField *targetView2 = [[XHSSTextField alloc] init];
     targetView.targetViewByKeyboard = self.view;
 }
+#endif
 
 @end

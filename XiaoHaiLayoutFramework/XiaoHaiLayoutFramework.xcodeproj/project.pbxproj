@@ -23,6 +23,7 @@
 		18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */; };
 		18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2830F1F9DC12B00FBF5DC /* XHSSAssetPickerVC.m */; };
 		18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E283121F9DEE0F00FBF5DC /* XHSSAlbumListVC.m */; };
+		18E32E771FF5DF3A001C1349 /* XHSSTabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */; };
 		18E583C51F99FF7600A42920 /* XHSSWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E583C41F99FF7600A42920 /* XHSSWebViewVC.m */; };
 		18E6FDD21F9A1CCB0039393F /* AVFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E6FDD11F9A1CCB0039393F /* AVFoundationViewController.m */; };
 		18E9F94F1F94D98B00BD3E74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F94E1F94D98B00BD3E74 /* main.m */; };
@@ -97,6 +98,8 @@
 		18E2830F1F9DC12B00FBF5DC /* XHSSAssetPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSAssetPickerVC.m; sourceTree = "<group>"; };
 		18E283111F9DEE0F00FBF5DC /* XHSSAlbumListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSAlbumListVC.h; sourceTree = "<group>"; };
 		18E283121F9DEE0F00FBF5DC /* XHSSAlbumListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSAlbumListVC.m; sourceTree = "<group>"; };
+		18E32E751FF5DF3A001C1349 /* XHSSTabScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSTabScrollView.h; sourceTree = "<group>"; };
+		18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSTabScrollView.m; sourceTree = "<group>"; };
 		18E583C31F99FF7600A42920 /* XHSSWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSWebViewVC.h; sourceTree = "<group>"; };
 		18E583C41F99FF7600A42920 /* XHSSWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSWebViewVC.m; sourceTree = "<group>"; };
 		18E6FDD01F9A1CCB0039393F /* AVFoundationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVFoundationViewController.h; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */ = {
 			isa = PBXGroup;
 			children = (
+				18E32E721FF5DED8001C1349 /* TabScrollView */,
 				18F52A9E1FE91BDF001C9855 /* CGWidgets */,
 				18F52A861FE8E778001C9855 /* Calculator */,
 				18F52A891FE8E778001C9855 /* ShortCutScreen */,
@@ -263,6 +267,15 @@
 				18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		18E32E721FF5DED8001C1349 /* TabScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				18E32E751FF5DF3A001C1349 /* XHSSTabScrollView.h */,
+				18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */,
+			);
+			path = TabScrollView;
 			sourceTree = "<group>";
 		};
 		18E583C21F99FC4100A42920 /* JS_OCInteractive */ = {
@@ -498,6 +511,7 @@
 				TargetAttributes = {
 					18E9F9491F94D98B00BD3E74 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					18E9F9621F94D98B00BD3E74 = {
@@ -587,6 +601,7 @@
 				182FF9871F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m in Sources */,
 				18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */,
 				18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */,
+				18E32E771FF5DF3A001C1349 /* XHSSTabScrollView.m in Sources */,
 				18EB948F1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m in Sources */,
 				181E98031FD91D9D005A6F70 /* UIView+XHSSLayoutTool.m in Sources */,
 				1822ADB01FA969E1009247DE /* XHSSVideoEditView.m in Sources */,
@@ -747,10 +762,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = XiaoHaiLayoutFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XiaoHai.XiaoHaiLayoutFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -758,10 +776,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = XiaoHaiLayoutFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XiaoHai.XiaoHaiLayoutFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

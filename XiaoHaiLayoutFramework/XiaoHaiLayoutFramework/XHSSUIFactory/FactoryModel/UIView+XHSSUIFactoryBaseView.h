@@ -5,6 +5,16 @@
 //  Created by Apple on 2017/12/21.
 //  Copyright © 2017年 XiaoHai. All rights reserved.
 //
+//
+//
+/**
+ 1. 数据绑定
+ 2. action 绑定
+ 3. manager 复用
+ 4. component key 处理
+ 5. 容错处理
+ 6. macro 定义
+ */
 
 #import <UIKit/UIKit.h>
 #import "XHSSUIFactoryViewModel.h"
@@ -35,7 +45,9 @@
 - (UIView*_Nonnull(^_Nonnull)(XHSSLayoutBridgeBlock _Nonnull layout))addLayout;
 - (UIView*_Nonnull(^_Nonnull)(XHSSConfigBridgeBlock _Nonnull config))addConfig;
 
+- (UIView*_Nonnull(^_Nonnull)())needAddToSuperView;
 - (UIView*_Nonnull(^_Nonnull)())needRefreshLayout;
+- (UIView*_Nonnull(^_Nonnull)())needRefreshConfig;
 
 @end
 
