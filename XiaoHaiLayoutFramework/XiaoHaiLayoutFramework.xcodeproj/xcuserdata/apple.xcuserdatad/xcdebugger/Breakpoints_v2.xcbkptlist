@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/XHSSUIFactory/FactoryModel/XHSSUIFactoryViewModel.m"
-            timestampString = "536206999.309355"
+            timestampString = "536636801.158608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-bindToView"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/XHSSUIFactory/FactoryModel/XHSSUIFactoryViewModel.m"
-            timestampString = "536206999.30985"
+            timestampString = "536636801.171953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "-bindToView"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/XHSSUIFactory/FactoryModel/XHSSUIFactoryViewModel.m"
-            timestampString = "536206999.310282"
+            timestampString = "536636801.17257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
             landmarkName = "-bindToView"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/ViewController.m"
-            timestampString = "536206999.310584"
+            timestampString = "536575415.290129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
@@ -246,11 +246,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/ViewController.m"
-            timestampString = "536206999.310712"
+            timestampString = "536575415.29026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "267"
@@ -262,16 +262,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoHaiLayoutFramework/XHSSUIFactory/UIView+XHSSLayoutTool.m"
-            timestampString = "536206999.310801"
+            timestampString = "536575415.290397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
             endingLineNumber = "175"
             landmarkName = "-toTopRefView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XiaoHaiLayoutFramework/XHSSUIFactory/FactoryModel/XHSSUIFactoryViewModel.m"
+            timestampString = "536636801.173229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "-bindToView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

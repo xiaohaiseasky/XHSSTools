@@ -149,12 +149,83 @@ NSString * const XHSSBindConfigBridgeBlockKey = @"XHSSBindConfigBridgeBlockKey";
 - (XHSSUIFactoryViewModel*_Nonnull(^_Nonnull)(UIView * _Nonnull view))bindToView {
     __weak typeof(self) weakSelf = self;
     return ^(UIView * _Nonnull view) {
+        
         weakSelf.targetView = view;
         
         //[weakSelf.subComponentNameArr addObject:@"root"];
 //        [weakSelf.subComponentsInfoDic setObject:weakSelf.targetView forKey:@"root"];
         
-        objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), 1 ? weakSelf : [weakSelf mutableCopy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+        
+        
+        
+        
+        
+//        NSLog(@"\n\n\n <<<<<<< \n fun : %@ --- before copy \n model : %@ \n view : %@ \n targetView : %@ \n >>>>>>>\n", NSStringFromSelector(_cmd), weakSelf, view, weakSelf.targetView);
+        
+#if 1
+        [weakSelf.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            UIView * subView = self.subComponentsInfoDic[viewName];
+            UIView * superView = objc_getAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey));
+            if (superView == nil) {
+                objc_setAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), weakSelf.targetView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+            
+            UIView * subViewCopy = [self copyView:subView];
+            
+            subViewCopy.needAddToSuperView();
+            subViewCopy.needRefreshConfig();
+            subViewCopy.needRefreshLayout();
+            
+            XHSSUIFactoryViewModel *model = objc_getAssociatedObject(subViewCopy, (__bridge const void * _Nonnull)(XHSSBindViewModelKey));
+            if (model) {
+                model.bindToView(subViewCopy);
+            }
+        }];
+        
+        objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), [weakSelf mutableCopy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+        NSLog(@"\n\n\n <<<<<<< \n end of : %@ ---  \n view : %@ \n subViews : %@ \n model : %@ model.subComponentsInfoDic : %@ \n >>>>>>>\n", NSStringFromSelector(_cmd), view, view.subviews, self, self.subComponentsInfoDic);
+        
+        /////////////////////////////////////////////////////////////////////
+//        if (model) {
+//            [model.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
+//
+//                UIView * subView = model.subComponentsInfoDic[viewName];
+//                UIView * superView = objc_getAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey));
+//                if (superView == nil) {
+//                    objc_setAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), weakSelf.targetView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//                }
+//
+//                subView.needAddToSuperView();
+//                subView.needRefreshConfig();
+//                subView.needRefreshLayout();
+//
+//            }];
+//
+//        } else {
+//            [weakSelf.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
+//
+//                UIView * subView = self.subComponentsInfoDic[viewName];
+//                UIView * superView = objc_getAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey));
+//                if (superView == nil) {
+//                    objc_setAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), weakSelf.targetView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//                }
+//
+//                subView.needAddToSuperView();
+//                subView.needRefreshConfig();
+//                subView.needRefreshLayout();
+//
+////                NSLog(@"\n >>>>>>> \n fun : %@ --- in enumrator , subView : %@ , superView : %@ \n <<<<<<< \n", NSStringFromSelector(_cmd), subView, superView);
+//            }];
+//
+//            objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), 0 ? weakSelf : [weakSelf mutableCopy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//        }
+        
+//        NSLog(@"\n <<<<<<< \n fun : %@ --- after copy \n model : %@ \n view : %@ \n targetView : %@ \n >>>>>>>\n", NSStringFromSelector(_cmd), model, view, model.targetView);
+#else
+        objc_setAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey), 0 ? weakSelf : [weakSelf mutableCopy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         XHSSUIFactoryViewModel *model = objc_getAssociatedObject(view, (__bridge const void * _Nonnull)(XHSSBindViewModelKey));
         [model.subComponentNameArr enumerateObjectsUsingBlock:^(NSString * _Nonnull viewName, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -164,6 +235,7 @@ NSString * const XHSSBindConfigBridgeBlockKey = @"XHSSBindConfigBridgeBlockKey";
             if (superView == nil) {
                 objc_setAssociatedObject(subView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), weakSelf.targetView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             }
+            
             subView.needAddToSuperView();
             subView.needRefreshConfig();
             subView.needRefreshLayout();
@@ -178,6 +250,7 @@ NSString * const XHSSBindConfigBridgeBlockKey = @"XHSSBindConfigBridgeBlockKey";
 //                [model loopAddToSuperViewWithKeyPath:viewName];
 //            }
         }];
+#endif
         
         
         
@@ -254,9 +327,13 @@ NSString * const XHSSBindConfigBridgeBlockKey = @"XHSSBindConfigBridgeBlockKey";
 
 - (id)mutableCopyWithZone:(NSZone *)zone{
     XHSSUIFactoryViewModel * model = [[XHSSUIFactoryViewModel allocWithZone:zone] init];
+//    NSLog(@"\n =======>>>>>>> \n fun : %@ --- mutableCopyWithZone before , \n self.subComponentsInfoDic : %@ , \n model.subComponentsInfoDic : %@ \n <<<<<<< \n", NSStringFromSelector(_cmd), self.subComponentsInfoDic, model.subComponentsInfoDic);
+    
     model.subComponentNameArr = [self mutableDeepCopyArr:self.subComponentNameArr];
     model.subComponentsInfoDic = [self mutableDeepCopyDic:self.subComponentsInfoDic];
     model.targetView = self.targetView;
+    
+//    NSLog(@"\n =======>>>>>>> \n fun : %@ --- mutableCopyWithZone after , \n self.subComponentsInfoDic : %@ , model.subComponentsInfoDic : %@ \n <<<<<<< \n", NSStringFromSelector(_cmd), self.subComponentsInfoDic, model.subComponentsInfoDic);
     return model;
 }
 
@@ -299,10 +376,17 @@ NSString * const XHSSBindConfigBridgeBlockKey = @"XHSSBindConfigBridgeBlockKey";
     objc_setAssociatedObject(newView, (__bridge const void * _Nonnull)(XHSSBindLayoutBridgeBlockKey), [layoutBlock copy], OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     UIView *superView = objc_getAssociatedObject(targetView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey));
+#if 1
     if (superView && !(superView == self.targetView)) {
         UIView *resultView = [self copyView:superView];
         objc_setAssociatedObject(newView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), resultView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
+#else
+    if (superView && !(superView == self.targetView)) {
+        objc_setAssociatedObject(newView, (__bridge const void * _Nonnull)(XHSSBindSuperViewKey), superView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+#endif
+    
     
     /// *** is need or not ***
     XHSSUIFactoryViewModel *model = objc_getAssociatedObject(targetView, (__bridge const void * _Nonnull)(XHSSBindViewModelKey));

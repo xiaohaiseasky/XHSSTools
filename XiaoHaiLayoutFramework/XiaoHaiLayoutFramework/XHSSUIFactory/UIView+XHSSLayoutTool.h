@@ -53,7 +53,6 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-#warning ------- should add method : topAddBy() / topAddTo() , topSubBy() / topSubTo()  ... ; then add these method to protocol -------
 #pragma mark - ==============参考视图===============
 // => distance().to***View().to***ViewScreenFit() << [top/left/bottom/right] not design yet >>
 #pragma mark - top
@@ -312,6 +311,21 @@
 - (UIView*(^)(UIView  *refView))centerEqualToViewCenterPoint;       // 固定像素适配
                                                                     // 无需按比例进行适配
 
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerX))centerXEqualToNum;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerX))centerXEqualToNumScreenFit;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView  *refView))centerXEqualToView;
+
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerY))centerYEqualToNum;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerY))centerYEqualToNumScreenFit;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView  *refView))centerYEqualToView;
+
+
 /**
  origin
  */
@@ -393,6 +407,32 @@
 - (UIView*(^)(UIView  *refView))rightAligmentToViewRight;
 
 
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerXValue))centerXAligmentToNum;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerXValue))centerXAligmentToNumScreenFit;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToView;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewLeft;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewCenterX;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewRight;
+
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerYValue))centerYAligmentToNum;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerYValue))centerYAligmentToNumScreenFit;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToView;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewTop;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewCenterY;
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewBottom;
+
 #pragma mark - ==============平移===============
 // => moveBY[to]Num().moveBY[to]NumScreenFit()[top/left/bottom/right].
 /**
@@ -438,6 +478,83 @@
 - (UIView*(^)(CGFloat  rightValue))moveRightToNum;
 /// ***
 - (UIView*(^)(CGFloat  rightValue))moveRightToNumScreenFit;
+
+#pragma mark - ==============增长===============
+#warning ------- should add method : topAddBy() / topAddTo() , topSubBy() / topSubTo()  ... ; then add these method to protocol -------
+
+/**
+ Top
+ */
+- (UIView*(^)(CGFloat  topAddValue))topAddByNum;
+- (UIView*(^)(CGFloat  topAddValue))topAddByNumScreenFit;
+
+- (UIView*(^)(CGFloat  topAddValue))topAddToNum;
+- (UIView*(^)(CGFloat  topAddValue))topAddToNumScreenFit;
+
+- (UIView*(^)(CGFloat  topAddValue))topSubByNum;
+- (UIView*(^)(CGFloat  topAddValue))topSubByNumScreenFit;
+
+- (UIView*(^)(CGFloat  topAddValue))topSubToNum;
+- (UIView*(^)(CGFloat  topAddValue))topSubToNumScreenFit;
+
+
+/**
+ Left
+ */
+- (UIView*(^)(CGFloat  leftAddValue))leftAddByNum;
+- (UIView*(^)(CGFloat  leftAddValue))leftAddByNumScreenFit;
+
+- (UIView*(^)(CGFloat  leftAddValue))leftAddToNum;
+- (UIView*(^)(CGFloat  leftAddValue))leftAddToNumScreenFit;
+
+- (UIView*(^)(CGFloat  leftAddValue))leftSubByNum;
+- (UIView*(^)(CGFloat  leftAddValue))leftSubByNumScreenFit;
+
+- (UIView*(^)(CGFloat  leftAddValue))leftSubToNum;
+- (UIView*(^)(CGFloat  leftAddValue))leftSubToNumScreenFit;
+
+/**
+ Bottom
+ */
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddByNum;
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddByNumScreenFit;
+
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddToNum;
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddToNumScreenFit;
+
+- (UIView*(^)(CGFloat  bottomAddValue))bottomSubByNum;
+- (UIView*(^)(CGFloat  bottomAddValue))bottomSubByNumScreenFit;
+
+- (UIView*(^)(CGFloat  bottomAddValue))bottomSubToNum;
+- (UIView*(^)(CGFloat  bottomAddValue))bottomSubToNumScreenFit;
+
+/**
+ Right
+ */
+- (UIView*(^)(CGFloat  rightAddValue))rightAddByNum;
+- (UIView*(^)(CGFloat  rightAddValue))rightAddByNumScreenFit;
+
+- (UIView*(^)(CGFloat  rightAddValue))rightAddToNum;
+- (UIView*(^)(CGFloat  rightAddValue))rightAddToNumScreenFit;
+
+- (UIView*(^)(CGFloat  rightAddValue))rightSubByNum;
+- (UIView*(^)(CGFloat  rightAddValue))rightSubByNumScreenFit;
+
+- (UIView*(^)(CGFloat  rightAddValue))rightSubToNum;
+- (UIView*(^)(CGFloat  rightAddValue))rightSubToNumScreenFit;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma mark - ==============联调===============

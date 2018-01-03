@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
 
 #pragma mark - ==============RUNTIME UNRECOGNEZED SELECTOR===============
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    NSLog(@"<<<<<<< 看到此崩溃日志说明你对当前视图的配置有错误，使用了当前视图没有对属性 : %@ >>>>>>>", NSStringFromSelector(sel));
+//    NSLog(@"<<<<<<< 看到此崩溃日志说明你对当前视图的配置有错误，使用了当前视图没有对属性 : %@ >>>>>>>", NSStringFromSelector(sel));
     return YES;
 }
 
@@ -791,6 +791,52 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
     };
 }
 
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerX))centerXEqualToNum {
+    return ^(CGFloat centerX) {
+        self.xhssCenter = CGPointMake(centerX, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerX))centerXEqualToNumScreenFit {
+    return ^(CGFloat centerX) {
+        self.xhssCenter = CGPointMake(centerX * self.adaptationRate, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView  *refView))centerXEqualToView {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(refView.xhssCenter.x, self.xhssCenter.y);
+        return self;
+    };
+}
+
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerY))centerYEqualToNum {
+    return ^(CGFloat centerY) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, centerY);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerY))centerYEqualToNumScreenFit {
+    return ^(CGFloat centerY) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, centerY * self.adaptationRate);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView  *refView))centerYEqualToView {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, refView.xhssCenter.y);
+        return self;
+    };
+}
+
+
+
 /**
  origin
  */
@@ -996,6 +1042,93 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
     };
 }
 
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerXValue))centerXAligmentToNum {
+    return ^(CGFloat centerXValue) {
+        self.xhssCenter = CGPointMake(centerXValue, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerXValue))centerXAligmentToNumScreenFit {
+    return ^(CGFloat centerXValue) {
+        self.xhssCenter = CGPointMake(centerXValue * self.adaptationRate, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToView {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(refView.xhssCenter.x, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewLeft {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(refView.xhssX, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewCenterX {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(refView.xhssX + refView.xhssWidth/2.0, self.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerXAligmentToViewRight {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(refView.xhssMaxX, self.xhssCenter.y);
+        return self;
+    };
+}
+
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerYValue))centerYAligmentToNum {
+    return ^(CGFloat centerYValue) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, centerYValue);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(CGFloat centerYValue))centerYAligmentToNumScreenFit {
+    return ^(CGFloat centerYValue) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, centerYValue * self.adaptationRate);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToView {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, refView.xhssCenter.y);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewTop {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, refView.xhssY);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewCenterY {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, refView.xhssY + refView.xhssHeight/2.0);
+        return self;
+    };
+}
+/// <<<<<<<>>>>>>>
+- (UIView*(^)(UIView *refView))centerYAligmentToViewBottom {
+    return ^(UIView  *refView) {
+        self.xhssCenter = CGPointMake(self.xhssCenter.x, refView.xhssMaxY);
+        return self;
+    };
+}
+
+
 #pragma mark - ==============平移===============
 /**
  up
@@ -1076,17 +1209,18 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
 /// *** not implementation ***
 - (UIView*(^)(CGFloat  dwonValue))moveDwonToNum {
     return ^(CGFloat dwonValue) {
-        self.xhssMaxY = dwonValue;
+        self.xhssY = dwonValue - self.xhssHeight;
         return self;
     };
 }
 /// *** not implementation ***
 - (UIView*(^)(CGFloat  dwonValue))moveDwonToNumScreenFit {
     return ^(CGFloat dwonValue) {
-        self.xhssMaxY = dwonValue * self.adaptationRate;
+        self.xhssY = dwonValue * self.adaptationRate - self.xhssHeight;
         return self;
     };
 }
+
 
 /**
  right
@@ -1106,17 +1240,284 @@ typedef NS_ENUM(NSUInteger, XHSSLayoutToolLayoutType) {
 /// *** not implementation ***
 - (UIView*(^)(CGFloat  rightValue))moveRightToNum {
     return ^(CGFloat rightValue) {
-        self.xhssMaxX = rightValue;
+        self.xhssX = rightValue - self.xhssWidth;
         return self;
     };
 }
 /// *** not implementation ***
 - (UIView*(^)(CGFloat  rightValue))moveRightToNumScreenFit {
     return ^(CGFloat rightValue) {
-        self.xhssMaxX = rightValue * self.adaptationRate;
+        self.xhssX = rightValue * self.adaptationRate - self.xhssWidth;
         return self;
     };
 }
+
+#pragma mark - ==============增长===============
+/**
+ Top
+ */
+/// *** add by ***
+- (UIView*(^)(CGFloat  topAddValue))topAddByNum {
+    return ^(CGFloat  topAddValue) {
+        self.xhssHeight += topAddValue;
+        self.xhssY -= topAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  topAddValue))topAddByNumScreenFit {
+    return ^(CGFloat  topAddValue) {
+        self.xhssHeight += topAddValue * self.adaptationRate;
+        self.xhssY -= topAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** add to ***
+- (UIView*(^)(CGFloat  topAddValue))topAddToNum {
+    return ^(CGFloat  topAddValue) {
+        self.xhssHeight += (topAddValue -self.xhssY);
+        self.xhssY = topAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  topAddValue))topAddToNumScreenFit {
+    return ^(CGFloat  topAddValue) {
+        self.xhssHeight += (topAddValue*self.adaptationRate -self.xhssY);
+        self.xhssY = topAddValue*self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub by ***
+- (UIView*(^)(CGFloat  topSubValue))topSubByNum {
+    return ^(CGFloat  topSubValue) {
+        self.xhssHeight -= topSubValue;
+        self.xhssY += topSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  topSubValue))topSubByNumScreenFit {
+    return ^(CGFloat  topSubValue) {
+        self.xhssHeight -= topSubValue * self.adaptationRate;
+        self.xhssY += topSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub to ***
+- (UIView*(^)(CGFloat  topSubValue))topSubToNum {
+    return ^(CGFloat  topSubValue) {
+        self.xhssHeight -= (topSubValue -self.xhssY);
+        self.xhssY = topSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  topSubValue))topSubToNumScreenFit {
+    return ^(CGFloat  topSubValue) {
+        self.xhssHeight -= (topSubValue * self.adaptationRate -self.xhssY);
+        self.xhssY = topSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+
+/**
+ Left
+ */
+/// *** add by ***
+- (UIView*(^)(CGFloat  leftAddValue))leftAddByNum {
+    return ^(CGFloat  leftAddValue) {
+        self.xhssWidth += leftAddValue;
+        self.xhssX -= leftAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  leftAddValue))leftAddByNumScreenFit {
+    return ^(CGFloat  leftAddValue) {
+        self.xhssWidth += leftAddValue * self.adaptationRate;
+        self.xhssX -= leftAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** add to ***
+- (UIView*(^)(CGFloat  leftAddValue))leftAddToNum {
+    return ^(CGFloat  leftAddValue) {
+        self.xhssWidth += (leftAddValue -self.xhssX);
+        self.xhssX = leftAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  leftAddValue))leftAddToNumScreenFit {
+    return ^(CGFloat  leftAddValue) {
+        self.xhssWidth += (leftAddValue * self.adaptationRate -self.xhssX);
+        self.xhssX = leftAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub by ***
+- (UIView*(^)(CGFloat  leftSubValue))leftSubByNum {
+    return ^(CGFloat  leftSubValue) {
+        self.xhssWidth -= leftSubValue;
+        self.xhssX += leftSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  leftSubValue))leftSubByNumScreenFit {
+    return ^(CGFloat  leftSubValue) {
+        self.xhssWidth -= leftSubValue * self.adaptationRate;
+        self.xhssX += leftSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub to ***
+- (UIView*(^)(CGFloat  leftSubValue))leftSubToNum {
+    return ^(CGFloat  leftSubValue) {
+        self.xhssWidth -= (leftSubValue -self.xhssY);
+        self.xhssX = leftSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  leftSubValue))leftSubToNumScreenFit {
+    return ^(CGFloat  leftSubValue) {
+        self.xhssWidth -= (leftSubValue * self.adaptationRate -self.xhssY);
+        self.xhssX = leftSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/**
+ Bottom
+ */
+/// *** add by ***
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddByNum {
+    return ^(CGFloat  bottomAddValue) {
+        self.xhssHeight += bottomAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddByNumScreenFit {
+    return ^(CGFloat  bottomAddValue) {
+        self.xhssHeight += bottomAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** add to ***
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddToNum {
+    return ^(CGFloat  bottomAddValue) {
+        self.xhssMaxY = bottomAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  bottomAddValue))bottomAddToNumScreenFit {
+    return ^(CGFloat  bottomAddValue) {
+        self.xhssMaxY = bottomAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub by ***
+- (UIView*(^)(CGFloat  bottomSubValue))bottomSubByNum {
+    return ^(CGFloat  bottomSubValue) {
+        self.xhssHeight -= bottomSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  bottomSubValue))bottomSubByNumScreenFit {
+    return ^(CGFloat  bottomSubValue) {
+        self.xhssHeight -= bottomSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub to ***
+- (UIView*(^)(CGFloat  bottomSubValue))bottomSubToNum {
+    return ^(CGFloat  bottomSubValue) {
+        self.xhssMaxY = bottomSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  bottomSubValue))bottomSubToNumScreenFit {
+    return ^(CGFloat  bottomSubValue) {
+        self.xhssMaxY = bottomSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/**
+ Right
+ */
+/// *** add by ***
+- (UIView*(^)(CGFloat  rightAddValue))rightAddByNum {
+    return ^(CGFloat  rightAddValue) {
+        self.xhssWidth += rightAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  rightAddValue))rightAddByNumScreenFit {
+    return ^(CGFloat  rightAddValue) {
+        self.xhssWidth += rightAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** add to ***
+- (UIView*(^)(CGFloat  rightAddValue))rightAddToNum {
+    return ^(CGFloat  rightAddValue) {
+        self.xhssMaxX = rightAddValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  rightAddValue))rightAddToNumScreenFit {
+    return ^(CGFloat  rightAddValue) {
+        self.xhssMaxX = rightAddValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub by ***
+- (UIView*(^)(CGFloat  rightSubValue))rightSubByNum {
+    return ^(CGFloat  rightSubValue) {
+        self.xhssWidth -= rightSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  rightSubValue))rightSubByNumScreenFit {
+    return ^(CGFloat  rightSubValue) {
+        self.xhssWidth -= rightSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+/// *** sub to ***
+- (UIView*(^)(CGFloat  rightSubValue))rightSubToNum {
+    return ^(CGFloat  rightSubValue) {
+        self.xhssMaxX = rightSubValue;
+        return self;
+    };
+}
+- (UIView*(^)(CGFloat  rightSubValue))rightSubToNumScreenFit {
+    return ^(CGFloat  rightSubValue) {
+        self.xhssMaxX = rightSubValue * self.adaptationRate;
+        return self;
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark - ==============联调===============
 // position
