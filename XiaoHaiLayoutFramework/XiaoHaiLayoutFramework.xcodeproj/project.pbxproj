@@ -21,6 +21,7 @@
 		189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B048C1FD0E2EA009734FC /* XHSSTextField.m */; };
 		18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */; };
 		18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */; };
+		18E23CED1FFDC1EF00EEE891 /* TestTabScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CEC1FFDC1EF00EEE891 /* TestTabScrollVC.m */; };
 		18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2830F1F9DC12B00FBF5DC /* XHSSAssetPickerVC.m */; };
 		18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E283121F9DEE0F00FBF5DC /* XHSSAlbumListVC.m */; };
 		18E32E771FF5DF3A001C1349 /* XHSSTabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */; };
@@ -94,6 +95,8 @@
 		18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSVideoPlayerCnotrolView.m; sourceTree = "<group>"; };
 		18B92E591FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		18E23CEB1FFDC1EF00EEE891 /* TestTabScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTabScrollVC.h; sourceTree = "<group>"; };
+		18E23CEC1FFDC1EF00EEE891 /* TestTabScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTabScrollVC.m; sourceTree = "<group>"; };
 		18E2830E1F9DC12B00FBF5DC /* XHSSAssetPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSAssetPickerVC.h; sourceTree = "<group>"; };
 		18E2830F1F9DC12B00FBF5DC /* XHSSAssetPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSAssetPickerVC.m; sourceTree = "<group>"; };
 		18E283111F9DEE0F00FBF5DC /* XHSSAlbumListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSAlbumListVC.h; sourceTree = "<group>"; };
@@ -222,7 +225,6 @@
 		18399D991FD4D7C2004E245E /* XHSSUIFactory */ = {
 			isa = PBXGroup;
 			children = (
-				18F2C8141FECC06F006E3DE9 /* Resource */,
 				18EB948C1FEBBAE4001FACE2 /* FactoryModel */,
 				181E97F91FD91D9C005A6F70 /* UIView+XHSSFrameTool.h */,
 				181E98011FD91D9D005A6F70 /* UIView+XHSSFrameTool.m */,
@@ -269,9 +271,19 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		18E23CEA1FFDC1CD00EEE891 /* TestVC */ = {
+			isa = PBXGroup;
+			children = (
+				18E23CEB1FFDC1EF00EEE891 /* TestTabScrollVC.h */,
+				18E23CEC1FFDC1EF00EEE891 /* TestTabScrollVC.m */,
+			);
+			path = TestVC;
+			sourceTree = "<group>";
+		};
 		18E32E721FF5DED8001C1349 /* TabScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				18E23CEA1FFDC1CD00EEE891 /* TestVC */,
 				18E32E751FF5DF3A001C1349 /* XHSSTabScrollView.h */,
 				18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */,
 			);
@@ -327,6 +339,7 @@
 		18E9F94C1F94D98B00BD3E74 /* XiaoHaiLayoutFramework */ = {
 			isa = PBXGroup;
 			children = (
+				18F2C8141FECC06F006E3DE9 /* Resource */,
 				18399D991FD4D7C2004E245E /* XHSSUIFactory */,
 				18B92E581FCFC151007B0F8F /* Tools */,
 				182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */,
@@ -609,6 +622,7 @@
 				181E98061FD91D9D005A6F70 /* UIView+XHSSFrameTool.m in Sources */,
 				182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */,
 				18F2C8131FECA577006E3DE9 /* XHSSManagerBridge.m in Sources */,
+				18E23CED1FFDC1EF00EEE891 /* TestTabScrollVC.m in Sources */,
 				18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */,
 				18E583C51F99FF7600A42920 /* XHSSWebViewVC.m in Sources */,
 				181E98071FD91D9D005A6F70 /* XHSSUIFactory.m in Sources */,

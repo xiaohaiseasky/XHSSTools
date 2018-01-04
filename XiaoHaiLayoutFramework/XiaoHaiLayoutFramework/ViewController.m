@@ -17,9 +17,11 @@
 
 #import "UIView+XHSSShadowMask.h"
 #import "UIView+XHSSUIFactoryBaseView.h"
+#import "XHSSTabScrollView.h"
+#import "TestTabScrollVC.h"
 
 
-@interface ViewController ()
+@interface ViewController () <XHSSTabScrollViewDelegate, XHSSTabScrollViewDataSource>
 
 @end
 
@@ -35,6 +37,7 @@
 
 - (void)test {
     
+#if 0
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(50, 0, 200, 30)];
     topView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:topView];
@@ -47,6 +50,7 @@
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 30, 100, 30, 300)];
     rightView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:rightView];
+#endif
     
 //    UIView *view = [[UIView alloc] init];
 //    view.backgroundColor = [UIColor redColor];
@@ -56,7 +60,47 @@
 //    view.topEqualToNum(2).leftEqualToNum(2).widthEqualToNum(10).bottomEqualToNum(2);
     
     
-    [self testUIFactoryModel];
+//    [self testUIFactoryModel];
+    
+    [self testTabScrollView];
+    
+}
+
+
+
+#pragma mark - test UIFactoryModel
+- (void)testTabScrollView {
+    XHSSTabScrollViewConfig *config = [[XHSSTabScrollViewConfig alloc] init];
+    config.contentVC = self;
+    XHSSTabScrollView *tabView = [[XHSSTabScrollView alloc] initWithConfig:config];
+    tabView.frame = self.view.bounds;
+    tabView.delegate = self;
+    tabView.dataSource = self;
+    tabView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:tabView];
+    
+}
+
+- (NSInteger)numberOfSubVCInXHSSTabScrollView:(XHSSTabScrollView *)tabScrollView {
+    return 3;
+}
+
+- (UIViewController *)XHSSTabScrollView:(XHSSTabScrollView *)tabScrollView subVCAtIndex:(NSInteger)index {
+    TestTabScrollVC *vc;
+    if (index == 0) {
+        TestTabScrollVC *vc1 = [[TestTabScrollVC alloc] init];
+        vc1.view.backgroundColor = [UIColor redColor];
+        vc = vc1;
+    } else if (index == 1) {
+        TestTabScrollVC *vc2 = [[TestTabScrollVC alloc] init];
+        vc2.view.backgroundColor = [UIColor greenColor];
+        vc = vc2;
+    } else if (index == 2) {
+        TestTabScrollVC *vc3 = [[TestTabScrollVC alloc] init];
+        vc3.view.backgroundColor = [UIColor magentaColor];
+        vc = vc3;
+    }
+    return vc;
 }
 
 

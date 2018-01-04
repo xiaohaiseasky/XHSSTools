@@ -77,7 +77,7 @@ typedef NS_ENUM(NSUInteger, XHSSTabScrollViewAnimationType) {
 @property (nonatomic, weak) id<XHSSTabScrollViewDataSource> dataSource;
 @property (nonatomic, strong) XHSSTabScrollViewConfig *config;
 
-@property (nonatomic, strong) NSArray<UIViewController*> *subVCArr;
+@property (nonatomic, strong) NSMutableArray<UIViewController*> *subVCArr;
 
 - (instancetype)initWithConfig:(XHSSTabScrollViewConfig*)config;
 
