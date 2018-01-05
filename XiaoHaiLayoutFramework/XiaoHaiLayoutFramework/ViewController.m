@@ -72,12 +72,22 @@
 - (void)testTabScrollView {
     XHSSTabScrollViewConfig *config = [[XHSSTabScrollViewConfig alloc] init];
     config.contentVC = self;
+    config.toolBarEdgeInsets = UIEdgeInsetsMake(10, 30, 0, 30);
+    config.toolBarYOffset = 70;
     XHSSTabScrollView *tabView = [[XHSSTabScrollView alloc] initWithConfig:config];
     tabView.frame = self.view.bounds;
     tabView.delegate = self;
     tabView.dataSource = self;
     tabView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:tabView];
+    
+}
+
+- (void)XHSSTabScrollView:(XHSSTabScrollView *)tabScrollView didSwitchToSubVC:(UIViewController *)subVC atIndex:(NSInteger)index {
+    
+}
+
+- (void)XHSSTabScrollView:(XHSSTabScrollView *)tabScrollView toolBar:(UIView *)toolBar didSwitchToItem:(UIView *)item atIndex:(NSInteger)index {
     
 }
 
@@ -103,6 +113,43 @@
     return vc;
 }
 
+- (CGFloat)headerViewHeightForXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    return 70;
+}
+
+- (UIView*)viewForHeaderInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor magentaColor];
+    return view;
+}
+
+- (CGFloat)toolBarHeightForXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    return 150;
+}
+
+//- (UIView<XHSSTabScrollViewToolBarViewDelegate>*)viewForToolBarInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+//
+//}
+
+- (UIEdgeInsets)toolBarEdgeInsetsForXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    return UIEdgeInsetsMake(10, 30, 0, 30);
+}
+
+//- (NSInteger)numberOfToolBarItemInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+//    return 3;
+//}
+
+//- (UIView *)XHSSTabScrollView:(XHSSTabScrollView *)tabScrollView viewForItemInToolBar:(UIView *)toolBar atIndex:(NSInteger)index {
+//    UIView *view = [[UIView alloc] init];
+//    if (index == 0) {
+//        view.backgroundColor = [UIColor redColor];
+//    } else if (index == 1) {
+//        view.backgroundColor = [UIColor magentaColor];
+//    } else if (index == 2) {
+//        view.backgroundColor = [UIColor blueColor];
+//    }
+//    return view;
+//}
 
 
 #pragma mark - test UIFactoryModel
