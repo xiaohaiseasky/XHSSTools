@@ -35,6 +35,14 @@
     self.toolBarIndicatorLineColor = [UIColor blueColor];
     self.toolBarIndicatorColor = [UIColor redColor];
     
+    self.toolBarItemTitleArr = [NSArray array];
+    self.toolBarItemFont = [UIFont systemFontOfSize:17];
+    self.toolBarItemNormalTextColor = [UIColor darkGrayColor];
+    self.toolBarItemHiglightTextColor = [UIColor redColor];
+    
+    self.toolBarItemToSubVCMapArr = [NSArray array];
+    
+    self.subVCArr = [NSArray array];
     self.subVCCount = 0;
     
     self.animationDuration = 0.4;
@@ -119,7 +127,8 @@
 - (void)tapInSelf:(UITapGestureRecognizer*)tap {
     CGPoint point = [tap locationInView:self];
 
-    if (CGRectContainsPoint(self.toolBar.frame, point)) {
+    if (![self.toolBar respondsToSelector:@selector(shouldSwitchToIndex:withAnimationDuration:)] &&
+        CGRectContainsPoint(self.toolBar.frame, point)) {
         __weak typeof(self) weakSelf = self;
         /// ???????
         [self.toolBarItemArr enumerateObjectsUsingBlock:^(UIView<XHSSTabScrollViewToolBarItemViewDelegate> * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -138,6 +147,7 @@
     if (self.config == nil) {
         self.config = [[XHSSTabScrollViewConfig alloc] init];
     }
+    self.subVCArr = [NSMutableArray arrayWithArray: self.config.subVCArr];
     
     if (self.config.contentVC == nil) {
         return;
@@ -161,7 +171,11 @@
     
     /// *** bottomContentView ***
     self.bottomContentView = [[UIScrollView alloc] init];
-    self.bottomContentView.frame = CGRectMake(0, CGRectGetMaxY(self.toolBar.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) - CGRectGetMaxY(self.toolBar.frame));
+    self.bottomContentView.frame = CGRectMake(0,
+                                              CGRectGetMaxY(self.toolBar.frame),
+                                              CGRectGetWidth(self.frame),
+                                              CGRectGetHeight(self.frame) - CGRectGetMaxY(self.toolBar.frame));
+    self.bottomContentView.delegate = self;
     self.bottomContentView.contentOffset = CGPointZero;
     self.bottomContentView.pagingEnabled = YES;
     [self addSubview:self.bottomContentView];
@@ -249,8 +263,13 @@
         [self.toolBar removeFromSuperview];
         self.toolBar = [self.dataSource viewForToolBarInXHSSTabScrollView:self];
         self.toolBar.frame = toolBarFrame;
+        __weak typeof(self) weakSelf = self;
+        self.toolBar.callBack = ^(NSInteger index) {
+            [weakSelf scrollBottomContentViewToIndex:index shouldUpdateToolBar:NO];
+        };
         [self addSubview:self.toolBar];
         
+        /// &&&&&&&
         [self.toolBarItemArr removeAllObjects];
         for (NSInteger index = 0; index < [self.toolBar itemCount]; index++) {
             /// ???????
@@ -477,8 +496,8 @@
     }
     
     /// update custom design view status
-    if (self.toolBar && [self.toolBar respondsToSelector:@selector(switchToIndex:withAnimationDuration:)]) {
-        [self.toolBar switchToIndex:index withAnimationDuration:self.config.animationDuration];
+    if (self.toolBar && [self.toolBar respondsToSelector:@selector(shouldSwitchToIndex:withAnimationDuration:)]) {
+        [self.toolBar shouldSwitchToIndex:index withAnimationDuration:self.config.animationDuration];
     } else {
         [self.toolBarItemArr enumerateObjectsUsingBlock:^(UIView<XHSSTabScrollViewToolBarItemViewDelegate> * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([item respondsToSelector:@selector(updateStatusForState:)]) {
@@ -567,6 +586,8 @@
         return;
     }
     
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapInSelf:)]];
+    
     if (self.contentView) {
         [self.contentView removeFromSuperview];
     }
@@ -580,6 +601,7 @@
     CGFloat width = (CGRectGetWidth(self.frame) -_contentEdgeInsets.left -_contentEdgeInsets.right)/_titlesArr.count;
     CGFloat height = CGRectGetHeight(self.frame) -_contentEdgeInsets.top -_contentEdgeInsets.bottom;
     
+    [self.itemViewArr removeAllObjects];
     __weak typeof(self) weakSelf = self;
     [_titlesArr enumerateObjectsUsingBlock:^(NSString * _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
         XHSSTabScrollViewToolBarItemView *itemView = [[XHSSTabScrollViewToolBarItemView alloc] init];
@@ -587,6 +609,8 @@
         [itemView setTitle:title];
         [weakSelf.contentView addSubview:itemView];
         [weakSelf.itemViewArr addObject:itemView];
+        
+        itemView.backgroundColor = [UIColor blueColor];
     }];
 }
 
@@ -594,19 +618,32 @@
     [self setupUI];
 }
 
+/// Action
+- (void)tapInSelf:(UITapGestureRecognizer*)tap {
+    CGPoint point = [tap locationInView:self];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.itemViewArr enumerateObjectsUsingBlock:^(UIView<XHSSTabScrollViewToolBarItemViewDelegate> * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (CGRectContainsPoint(item.frame, point) && weakSelf.callBack) {
+            weakSelf.callBack(idx);
+        }
+    }];
+}
+
 /// confirm protocol
-- (void)switchToIndex:(NSInteger)index withAnimationDuration:(NSTimeInterval)duration {
-    UIView *item = self.itemViewArr[index];
+- (void)shouldSwitchToIndex:(NSInteger)index withAnimationDuration:(NSTimeInterval)duration {
+    UIView <XHSSTabScrollViewToolBarItemViewDelegate> *item = self.itemViewArr[index];
     
     [self.itemViewArr enumerateObjectsUsingBlock:^(UIView<XHSSTabScrollViewToolBarItemViewDelegate> * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([item respondsToSelector:@selector(updateStatusForState:)]) {
-            [item performSelector:@selector(updateStatusForState:) withObject:@(XHSSTabScrollViewToolBarItemViewStateNormal)];
+            [item updateStatusForState:XHSSTabScrollViewToolBarItemViewStateNormal];
         }
     }];
     if ([item respondsToSelector:@selector(updateStatusForState:)]) {
-        [item performSelector:@selector(updateStatusForState:) withObject:@(XHSSTabScrollViewToolBarItemViewStateHiglight)];
+        [item updateStatusForState:XHSSTabScrollViewToolBarItemViewStateHiglight];
     }
 }
+
 
 - (NSInteger)itemCount {
     return self.itemViewArr.count;
@@ -655,6 +692,14 @@
 - (void)setTitle:(NSString*)title {
     _titleLabel.text = title;
 }
+
+
+- (void)setTitle:(NSString*)title font:(UIFont*)font textColor:(UIColor*)textColor {
+
+    _titleLabel.font = font;
+    _titleLabel.textColor = textColor;
+}
+
 
 /// confirm protocol
 - (void)updateStatusForState:(XHSSTabScrollViewToolBarItemViewState)state {

@@ -73,6 +73,9 @@
     XHSSTabScrollViewConfig *config = [[XHSSTabScrollViewConfig alloc] init];
     config.contentVC = self;
     config.toolBarEdgeInsets = UIEdgeInsetsMake(10, 30, 0, 30);
+    config.toolBarItemTitleArr = @[@"111", @"222", @"333"];
+    config.toolBarItemFont = [UIFont boldSystemFontOfSize:23];
+    config.toolBarItemNormalTextColor = [UIColor magentaColor];
     config.toolBarYOffset = 70;
     XHSSTabScrollView *tabView = [[XHSSTabScrollView alloc] initWithConfig:config];
     tabView.frame = self.view.bounds;
@@ -127,17 +130,20 @@
     return 150;
 }
 
-//- (UIView<XHSSTabScrollViewToolBarViewDelegate>*)viewForToolBarInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
-//
-//}
+- (UIView<XHSSTabScrollViewToolBarViewDelegate>*)viewForToolBarInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    XHSSTabScrollViewToolBarView *toolBar = [[XHSSTabScrollViewToolBarView alloc] init];
+    toolBar.titlesArr = @[@"1", @"2", @"3"];
+    toolBar.contentEdgeInsets = UIEdgeInsetsMake(10, 30, 0, 30);
+    return toolBar;
+}
 
 - (UIEdgeInsets)toolBarEdgeInsetsForXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
     return UIEdgeInsetsMake(10, 30, 0, 30);
 }
 
-//- (NSInteger)numberOfToolBarItemInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
-//    return 3;
-//}
+- (NSInteger)numberOfToolBarItemInXHSSTabScrollView:(XHSSTabScrollView*)tabScrollView {
+    return 3;
+}
 
 //- (UIView *)XHSSTabScrollView:(XHSSTabScrollView *)tabScrollView viewForItemInToolBar:(UIView *)toolBar atIndex:(NSInteger)index {
 //    UIView *view = [[UIView alloc] init];
