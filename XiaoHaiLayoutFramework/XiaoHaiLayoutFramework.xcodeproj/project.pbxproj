@@ -18,6 +18,10 @@
 		182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9831F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m */; };
 		182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */; };
 		183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */; };
+		1837258E2005F629000D52E6 /* XHSSMapUnLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837258D2005F629000D52E6 /* XHSSMapUnLockView.m */; };
+		183725912005F88E000D52E6 /* XHSSMapUnlockScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183725902005F88E000D52E6 /* XHSSMapUnlockScrollView.m */; };
+		1837259320061B8C000D52E6 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1837259220061B8C000D52E6 /* icon.jpg */; };
+		183F09CD2004A87A008A4DDA /* XHSSScrollPopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 183F09CC2004A87A008A4DDA /* XHSSScrollPopWindow.m */; };
 		189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B048C1FD0E2EA009734FC /* XHSSTextField.m */; };
 		18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */; };
 		18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */; };
@@ -89,6 +93,13 @@
 		182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAHiAccumulatePointPageControlView.m; sourceTree = "<group>"; };
 		183701C21FEA6C73008F73C5 /* UIView+XHSSShadowMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XHSSShadowMask.h"; sourceTree = "<group>"; };
 		183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHSSShadowMask.m"; sourceTree = "<group>"; };
+		1837258C2005F629000D52E6 /* XHSSMapUnLockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSMapUnLockView.h; sourceTree = "<group>"; };
+		1837258D2005F629000D52E6 /* XHSSMapUnLockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSMapUnLockView.m; sourceTree = "<group>"; };
+		1837258F2005F88E000D52E6 /* XHSSMapUnlockScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSMapUnlockScrollView.h; sourceTree = "<group>"; };
+		183725902005F88E000D52E6 /* XHSSMapUnlockScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSMapUnlockScrollView.m; sourceTree = "<group>"; };
+		1837259220061B8C000D52E6 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		183F09CB2004A87A008A4DDA /* XHSSScrollPopWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSScrollPopWindow.h; sourceTree = "<group>"; };
+		183F09CC2004A87A008A4DDA /* XHSSScrollPopWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSScrollPopWindow.m; sourceTree = "<group>"; };
 		189B048B1FD0E2EA009734FC /* XHSSTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSTextField.h; sourceTree = "<group>"; };
 		189B048C1FD0E2EA009734FC /* XHSSTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSTextField.m; sourceTree = "<group>"; };
 		18AA88171FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSVideoPlayerCnotrolView.h; sourceTree = "<group>"; };
@@ -182,6 +193,8 @@
 		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */ = {
 			isa = PBXGroup;
 			children = (
+				1837258B2005F5BC000D52E6 /* MapScrollView */,
+				183F09CA2004A855008A4DDA /* ScrollPopWindow */,
 				18E32E721FF5DED8001C1349 /* TabScrollView */,
 				18F52A9E1FE91BDF001C9855 /* CGWidgets */,
 				18F52A861FE8E778001C9855 /* Calculator */,
@@ -222,6 +235,17 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
+		1837258B2005F5BC000D52E6 /* MapScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1837258C2005F629000D52E6 /* XHSSMapUnLockView.h */,
+				1837258D2005F629000D52E6 /* XHSSMapUnLockView.m */,
+				1837258F2005F88E000D52E6 /* XHSSMapUnlockScrollView.h */,
+				183725902005F88E000D52E6 /* XHSSMapUnlockScrollView.m */,
+			);
+			path = MapScrollView;
+			sourceTree = "<group>";
+		};
 		18399D991FD4D7C2004E245E /* XHSSUIFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +262,15 @@
 				181E97FB1FD91D9C005A6F70 /* XHSSUIManager.m */,
 			);
 			path = XHSSUIFactory;
+			sourceTree = "<group>";
+		};
+		183F09CA2004A855008A4DDA /* ScrollPopWindow */ = {
+			isa = PBXGroup;
+			children = (
+				183F09CB2004A87A008A4DDA /* XHSSScrollPopWindow.h */,
+				183F09CC2004A87A008A4DDA /* XHSSScrollPopWindow.m */,
+			);
+			path = ScrollPopWindow;
 			sourceTree = "<group>";
 		};
 		189B048A1FD0E2CD009734FC /* TextField */ = {
@@ -400,6 +433,7 @@
 		18F2C8141FECC06F006E3DE9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1837259220061B8C000D52E6 /* icon.jpg */,
 				18F2C8151FECC0CF006E3DE9 /* pic.jpg */,
 			);
 			name = Resource;
@@ -568,6 +602,7 @@
 				18E9F95A1F94D98B00BD3E74 /* Assets.xcassets in Resources */,
 				18E9F9581F94D98B00BD3E74 /* Main.storyboard in Resources */,
 				18F52A911FE8E779001C9855 /* ActionSheet数据源.plist in Resources */,
+				1837259320061B8C000D52E6 /* icon.jpg in Resources */,
 				18F2C8161FECC0CF006E3DE9 /* pic.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +634,7 @@
 				18EB94921FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m in Sources */,
 				181E98041FD91D9D005A6F70 /* XHSSUIManager.m in Sources */,
 				18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */,
+				183725912005F88E000D52E6 /* XHSSMapUnlockScrollView.m in Sources */,
 				18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */,
 				189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */,
 				18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */,
@@ -607,8 +643,10 @@
 				18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */,
 				182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */,
 				18E9F94F1F94D98B00BD3E74 /* main.m in Sources */,
+				1837258E2005F629000D52E6 /* XHSSMapUnLockView.m in Sources */,
 				18F52AA11FE91C1F001C9855 /* XHSSShadowView.m in Sources */,
 				180F059C1FA6C40200D01EFD /* XHSSDoubleControlSlider.m in Sources */,
+				183F09CD2004A87A008A4DDA /* XHSSScrollPopWindow.m in Sources */,
 				18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */,
 				18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */,
 				182FF9871F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m in Sources */,

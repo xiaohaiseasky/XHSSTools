@@ -19,9 +19,11 @@
 #import "UIView+XHSSUIFactoryBaseView.h"
 #import "XHSSTabScrollView.h"
 #import "TestTabScrollVC.h"
+#import "XHSSScrollPopWindow.h"
+#import "XHSSMapUnlockScrollView.h"
 
 
-@interface ViewController () <XHSSTabScrollViewDelegate, XHSSTabScrollViewDataSource>
+@interface ViewController () <XHSSTabScrollViewDelegate, XHSSTabScrollViewDataSource, XHSSScrollPopWindowDelegate>
 
 @end
 
@@ -62,10 +64,86 @@
     
 //    [self testUIFactoryModel];
     
-    [self testTabScrollView];
+//    [self testTabScrollView];
     
+    
+    [self testMapUnLockView];
+    
+//    [self testScrollPopView];
 }
 
+#pragma mark - test testMapUnLockView
+- (void)testMapUnLockView {
+    //XHSSMapUnLockView *map = [[XHSSMapUnLockView alloc] init];
+    XHSSMapUnlockScrollView *map = [[XHSSMapUnlockScrollView alloc] init];
+    map.contentSize = CGSizeMake(1000, 2000);
+    map.frame = CGRectMake(0, 100, [UIApplication sharedApplication].keyWindow.bounds.size.width, 400);
+    [self.view addSubview:map];
+    
+    [map addNextStep:CGPointMake(0, 0)];
+    [map addNextStep:CGPointMake(0, 100)];
+    [map addNextStep:CGPointMake(100, 100)];
+    [map addNextStep:CGPointMake(200, 100)];
+    [map addNextStep:CGPointMake(200, 200)];
+    [map addNextStep:CGPointMake(300, 200)];
+    [map addNextStep:CGPointMake(300, 300)];
+    [map addNextStep:CGPointMake(400, 300)];
+    [map addNextStep:CGPointMake(400, 400)];
+    [map addNextStep:CGPointMake(500, 400)];
+    [map addNextStep:CGPointMake(500, 500)];
+    [map addNextStep:CGPointMake(600, 500)];
+    [map addNextStep:CGPointMake(600, 600)];
+    [map addNextStep:CGPointMake(700, 600)];
+    
+    map.bgImage = [UIImage imageNamed:@"pic.jpg"];
+    
+    map.iconArr = [NSMutableArray arrayWithArray:@[[UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"],
+                                                    [UIImage imageNamed:@"icon.jpg"]]];
+    
+    map.currentPositionIcon = [UIImage imageNamed:@"icon.jpg"];
+    
+    map.finishPercentText = @"123%";
+    
+    [map refreshPath];
+}
+
+#pragma mark - test testScrollPopView
+- (void)testScrollPopView {
+    XHSSScrollPopWindow *pop = [[XHSSScrollPopWindow alloc] init];
+    pop.delegate = self;
+    pop.maxAvilableScrollIndex = 10;
+    pop.reuseEnable = YES;
+    [pop show];
+}
+
+/// XHSSScrollPopWindowDelegate
+- (NSInteger)pageNumberInScrollPopWindow:(XHSSScrollPopWindow *)scrollPopWindow {
+    return 10;
+}
+
+- (UIView *)pageViewInScrollPopWindow:(XHSSScrollPopWindow *)scrollPopWindow atIndex:(NSInteger)index {
+    UIView *view; // = [[UIView alloc] init];
+    view = [scrollPopWindow reusePageViewOfClass:[UIView class] withIdentifier:@"UIView"];
+    NSLog(@"<<<<<<< view address = %p>>>>>>>", view);
+    view.backgroundColor = [UIColor redColor];
+    return view;
+}
+
+- (CGSize)pageViewSizeInScrollPopWindow:(XHSSScrollPopWindow *)scrollPopWindow atIndex:(NSInteger)index {
+    return CGSizeMake(300, 500);
+}
 
 
 #pragma mark - test UIFactoryModel

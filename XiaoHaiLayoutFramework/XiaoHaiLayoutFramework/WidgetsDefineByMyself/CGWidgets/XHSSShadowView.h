@@ -57,3 +57,4 @@ typedef NS_ENUM(NSUInteger, XHSSDrawGradientDirection) {
 @property (nonatomic, assign) CGFloat shadowBlur;
 
 @end
+
