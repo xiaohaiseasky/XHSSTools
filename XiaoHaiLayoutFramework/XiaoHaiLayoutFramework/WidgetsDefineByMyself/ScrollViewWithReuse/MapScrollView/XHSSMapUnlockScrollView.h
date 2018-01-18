@@ -18,7 +18,7 @@
 @property (nonatomic, assign) CGFloat currentPositionIconYOffset;   // 当前位置图标Y轴偏移量
 @property (nonatomic, strong) NSString *finishPercentText;          // 当前位置信息
 @property (nonatomic, assign) CGSize finishPercentTextAreaSize;     // 当前位置信息绘制区域尺寸
-@property (nonatomic, assign) CGFloat finishPercentTextAreaYOffset;  // 当前位置信息绘制区域尺寸Y轴偏移量
+@property (nonatomic, assign) CGFloat finishPercentTextAreaYOffset; // 当前位置信息绘制区域尺寸Y轴偏移量
 
 @property (nonatomic, strong) NSMutableArray *pathArr;              // 路径数组
 @property (nonatomic, strong) NSMutableArray<UIImage*> *iconArr;    // 路径中拐点处的图片icon数组
