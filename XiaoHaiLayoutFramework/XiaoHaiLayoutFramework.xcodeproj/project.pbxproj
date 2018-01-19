@@ -197,47 +197,47 @@
 			isa = PBXGroup;
 			children = (
 				1848EA66200DE7A600D5FCD0 /* ScrollViewWithReuse */,
-				18E32E721FF5DED8001C1349 /* TabScrollView */,
-				18F52A9E1FE91BDF001C9855 /* CGWidgets */,
-				18F52A861FE8E778001C9855 /* Calculator */,
-				18F52A891FE8E778001C9855 /* ShortCutScreen */,
-				18F52A821FE8E778001C9855 /* UIView+ActionSheet */,
-				189B048A1FD0E2CD009734FC /* TextField */,
-				182FF97E1F9D819300E8A179 /* Banner */,
-				182FF9811F9D819300E8A179 /* Calendar */,
-				182FF9841F9D819300E8A179 /* PageControl */,
+				18E32E721FF5DED8001C1349 /* TabScrollView（分组切换控制器管理器） */,
+				18F52A9E1FE91BDF001C9855 /* CGWidgets（视图阴影、圆角、渐变、遮罩） */,
+				18F52A861FE8E778001C9855 /* Calculator（计算器） */,
+				18F52A891FE8E778001C9855 /* ShortCutScreen（截屏工具） */,
+				18F52A821FE8E778001C9855 /* UIView+ActionSheet（封装ActionSheet） */,
+				189B048A1FD0E2CD009734FC /* TextField（带验证规则的输入框） */,
+				182FF97E1F9D819300E8A179 /* Banner（复用子视图的Banner控件） */,
+				182FF9811F9D819300E8A179 /* Calendar（日历） */,
+				182FF9841F9D819300E8A179 /* PageControl(自定义PageControl) */,
 			);
 			path = WidgetsDefineByMyself;
 			sourceTree = "<group>";
 		};
-		182FF97E1F9D819300E8A179 /* Banner */ = {
+		182FF97E1F9D819300E8A179 /* Banner（复用子视图的Banner控件） */ = {
 			isa = PBXGroup;
 			children = (
 				182FF97F1F9D819300E8A179 /* HNAHiAccumulatePointBannerView.h */,
 				182FF9801F9D819300E8A179 /* HNAHiAccumulatePointBannerView.m */,
 			);
-			path = Banner;
+			path = "Banner（复用子视图的Banner控件）";
 			sourceTree = "<group>";
 		};
-		182FF9811F9D819300E8A179 /* Calendar */ = {
+		182FF9811F9D819300E8A179 /* Calendar（日历） */ = {
 			isa = PBXGroup;
 			children = (
 				182FF9821F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.h */,
 				182FF9831F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m */,
 			);
-			path = Calendar;
+			path = "Calendar（日历）";
 			sourceTree = "<group>";
 		};
-		182FF9841F9D819300E8A179 /* PageControl */ = {
+		182FF9841F9D819300E8A179 /* PageControl(自定义PageControl) */ = {
 			isa = PBXGroup;
 			children = (
 				182FF9851F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.h */,
 				182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */,
 			);
-			path = PageControl;
+			path = "PageControl(自定义PageControl)";
 			sourceTree = "<group>";
 		};
-		18399D991FD4D7C2004E245E /* XHSSUIFactory */ = {
+		18399D991FD4D7C2004E245E /* XHSSUIFactory（布局适配工具） */ = {
 			isa = PBXGroup;
 			children = (
 				18EB948C1FEBBAE4001FACE2 /* FactoryModel */,
@@ -252,7 +252,7 @@
 				181E97FC1FD91D9C005A6F70 /* XHSSUIManager.h */,
 				181E97FB1FD91D9C005A6F70 /* XHSSUIManager.m */,
 			);
-			path = XHSSUIFactory;
+			path = "XHSSUIFactory（布局适配工具）";
 			sourceTree = "<group>";
 		};
 		1848EA66200DE7A600D5FCD0 /* ScrollViewWithReuse */ = {
@@ -260,7 +260,7 @@
 			children = (
 				1848EA72200DE80400D5FCD0 /* ScrollViewWithReuseItemView */,
 				1848EA67200DE7A600D5FCD0 /* MapScrollView */,
-				1848EA6C200DE7A600D5FCD0 /* ScrollPopWindow */,
+				1848EA6C200DE7A600D5FCD0 /* ScrollPopWindow（复用子视图的类似引导页控件） */,
 			);
 			path = ScrollViewWithReuse;
 			sourceTree = "<group>";
@@ -276,13 +276,14 @@
 			path = MapScrollView;
 			sourceTree = "<group>";
 		};
-		1848EA6C200DE7A600D5FCD0 /* ScrollPopWindow */ = {
+		1848EA6C200DE7A600D5FCD0 /* ScrollPopWindow（复用子视图的类似引导页控件） */ = {
 			isa = PBXGroup;
 			children = (
 				1848EA6D200DE7A600D5FCD0 /* XHSSScrollPopWindow.h */,
 				1848EA6E200DE7A600D5FCD0 /* XHSSScrollPopWindow.m */,
+				18E23CEA1FFDC1CD00EEE891 /* TestVC */,
 			);
-			path = ScrollPopWindow;
+			path = "ScrollPopWindow（复用子视图的类似引导页控件）";
 			sourceTree = "<group>";
 		};
 		1848EA72200DE80400D5FCD0 /* ScrollViewWithReuseItemView */ = {
@@ -294,13 +295,13 @@
 			path = ScrollViewWithReuseItemView;
 			sourceTree = "<group>";
 		};
-		189B048A1FD0E2CD009734FC /* TextField */ = {
+		189B048A1FD0E2CD009734FC /* TextField（带验证规则的输入框） */ = {
 			isa = PBXGroup;
 			children = (
 				189B048B1FD0E2EA009734FC /* XHSSTextField.h */,
 				189B048C1FD0E2EA009734FC /* XHSSTextField.m */,
 			);
-			path = TextField;
+			path = "TextField（带验证规则的输入框）";
 			sourceTree = "<group>";
 		};
 		18AA88161FA17E400002D6EF /* View */ = {
@@ -316,13 +317,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		18B92E581FCFC151007B0F8F /* Tools */ = {
+		18B92E581FCFC151007B0F8F /* Tools（自定义CollectionViewLayout） */ = {
 			isa = PBXGroup;
 			children = (
 				18B92E591FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.h */,
 				18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */,
 			);
-			path = Tools;
+			path = "Tools（自定义CollectionViewLayout）";
 			sourceTree = "<group>";
 		};
 		18E23CEA1FFDC1CD00EEE891 /* TestVC */ = {
@@ -334,14 +335,13 @@
 			path = TestVC;
 			sourceTree = "<group>";
 		};
-		18E32E721FF5DED8001C1349 /* TabScrollView */ = {
+		18E32E721FF5DED8001C1349 /* TabScrollView（分组切换控制器管理器） */ = {
 			isa = PBXGroup;
 			children = (
-				18E23CEA1FFDC1CD00EEE891 /* TestVC */,
 				18E32E751FF5DF3A001C1349 /* XHSSTabScrollView.h */,
 				18E32E761FF5DF3A001C1349 /* XHSSTabScrollView.m */,
 			);
-			path = TabScrollView;
+			path = "TabScrollView（分组切换控制器管理器）";
 			sourceTree = "<group>";
 		};
 		18E583C21F99FC4100A42920 /* JS_OCInteractive */ = {
@@ -394,8 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				18F2C8141FECC06F006E3DE9 /* Resource */,
-				18399D991FD4D7C2004E245E /* XHSSUIFactory */,
-				18B92E581FCFC151007B0F8F /* Tools */,
+				18399D991FD4D7C2004E245E /* XHSSUIFactory（布局适配工具） */,
+				18B92E581FCFC151007B0F8F /* Tools（自定义CollectionViewLayout） */,
 				182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */,
 				18E6FDCF1F9A1B670039393F /* AVFoundation */,
 				18E583C21F99FC4100A42920 /* JS_OCInteractive */,
@@ -461,47 +461,47 @@
 			path = XiaoHaiLayoutFramework/Resource;
 			sourceTree = SOURCE_ROOT;
 		};
-		18F52A821FE8E778001C9855 /* UIView+ActionSheet */ = {
+		18F52A821FE8E778001C9855 /* UIView+ActionSheet（封装ActionSheet） */ = {
 			isa = PBXGroup;
 			children = (
 				18F52A831FE8E778001C9855 /* ActionSheet数据源.plist */,
 				18F52A841FE8E778001C9855 /* UIViewController+XHSSActionSheet.h */,
 				18F52A851FE8E778001C9855 /* UIViewController+XHSSActionSheet.m */,
 			);
-			path = "UIView+ActionSheet";
+			path = "UIView+ActionSheet（封装ActionSheet）";
 			sourceTree = "<group>";
 		};
-		18F52A861FE8E778001C9855 /* Calculator */ = {
+		18F52A861FE8E778001C9855 /* Calculator（计算器） */ = {
 			isa = PBXGroup;
 			children = (
 				18F52A871FE8E778001C9855 /* XHSSCalculatorView.h */,
 				18F52A881FE8E778001C9855 /* XHSSCalculatorView.m */,
 			);
-			path = Calculator;
+			path = "Calculator（计算器）";
 			sourceTree = "<group>";
 		};
-		18F52A891FE8E778001C9855 /* ShortCutScreen */ = {
+		18F52A891FE8E778001C9855 /* ShortCutScreen（截屏工具） */ = {
 			isa = PBXGroup;
 			children = (
-				18F52A8A1FE8E778001C9855 /* PaintingBoard */,
+				18F52A8A1FE8E778001C9855 /* PaintingBoard（涂鸦画板） */,
 				18F52A8D1FE8E778001C9855 /* XHSSCutImageView.h */,
 				18F52A8E1FE8E778001C9855 /* XHSSCutImageView.m */,
 				18F52A8F1FE8E778001C9855 /* XHSSToolsView.h */,
 				18F52A901FE8E778001C9855 /* XHSSToolsView.m */,
 			);
-			path = ShortCutScreen;
+			path = "ShortCutScreen（截屏工具）";
 			sourceTree = "<group>";
 		};
-		18F52A8A1FE8E778001C9855 /* PaintingBoard */ = {
+		18F52A8A1FE8E778001C9855 /* PaintingBoard（涂鸦画板） */ = {
 			isa = PBXGroup;
 			children = (
 				18F52A8B1FE8E778001C9855 /* XHSSPaintingView.h */,
 				18F52A8C1FE8E778001C9855 /* XHSSPaintingView.m */,
 			);
-			path = PaintingBoard;
+			path = "PaintingBoard（涂鸦画板）";
 			sourceTree = "<group>";
 		};
-		18F52A9E1FE91BDF001C9855 /* CGWidgets */ = {
+		18F52A9E1FE91BDF001C9855 /* CGWidgets（视图阴影、圆角、渐变、遮罩） */ = {
 			isa = PBXGroup;
 			children = (
 				18F52A9F1FE91C1F001C9855 /* XHSSShadowView.h */,
@@ -509,7 +509,7 @@
 				183701C21FEA6C73008F73C5 /* UIView+XHSSShadowMask.h */,
 				183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */,
 			);
-			path = CGWidgets;
+			path = "CGWidgets（视图阴影、圆角、渐变、遮罩）";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
