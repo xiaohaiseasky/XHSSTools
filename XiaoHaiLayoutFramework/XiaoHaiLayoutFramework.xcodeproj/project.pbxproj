@@ -19,22 +19,21 @@
 		182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FF9861F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m */; };
 		183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */; };
 		1837259320061B8C000D52E6 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1837259220061B8C000D52E6 /* icon.jpg */; };
-		183D26372016DA1D0019CD5B /* XHDataTypeClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26222016DA1D0019CD5B /* XHDataTypeClassify.m */; };
-		183D26382016DA1D0019CD5B /* XHDBCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26242016DA1D0019CD5B /* XHDBCommon.m */; };
-		183D26392016DA1D0019CD5B /* XHDBOprationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26262016DA1D0019CD5B /* XHDBOprationManager.m */; };
-		183D263A2016DA1D0019CD5B /* XHDBPathGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26282016DA1D0019CD5B /* XHDBPathGenerator.m */; };
-		183D263B2016DA1D0019CD5B /* XHGetModleRuntimeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D262A2016DA1D0019CD5B /* XHGetModleRuntimeInfo.m */; };
-		183D263C2016DA1D0019CD5B /* XHSQLiteDBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D262C2016DA1D0019CD5B /* XHSQLiteDBCore.m */; };
-		183D263D2016DA1D0019CD5B /* XHSQLSentenceGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D262E2016DA1D0019CD5B /* XHSQLSentenceGenerator.m */; };
-		183D263E2016DA1D0019CD5B /* SQLiteDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26312016DA1D0019CD5B /* SQLiteDBManager.m */; };
 		183D263F2016DA1D0019CD5B /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26342016DA1D0019CD5B /* Book.m */; };
 		183D26402016DA1D0019CD5B /* TestModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26362016DA1D0019CD5B /* TestModle.m */; };
+		183D26462016E74A0019CD5B /* XHSSSQLitDBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D26452016E74A0019CD5B /* XHSSSQLitDBCore.m */; };
 		1848EA6F200DE7A600D5FCD0 /* XHSSMapUnlockScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848EA69200DE7A600D5FCD0 /* XHSSMapUnlockScrollView.m */; };
 		1848EA70200DE7A600D5FCD0 /* XHSSMapUnLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848EA6B200DE7A600D5FCD0 /* XHSSMapUnLockView.m */; };
 		1848EA71200DE7A600D5FCD0 /* XHSSScrollPopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848EA6E200DE7A600D5FCD0 /* XHSSScrollPopWindow.m */; };
 		1848EA78200DE87900D5FCD0 /* XHSSReuseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848EA77200DE87900D5FCD0 /* XHSSReuseScrollView.m */; };
 		189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B048C1FD0E2EA009734FC /* XHSSTextField.m */; };
 		18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */; };
+		18B738A220171F1400815A3C /* XHSSDBCommonSettingFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738A120171F1400815A3C /* XHSSDBCommonSettingFile.m */; };
+		18B738A520171F4700815A3C /* XHSSDBPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738A420171F4700815A3C /* XHSSDBPathManager.m */; };
+		18B738A82017200F00815A3C /* XHSSModelRuntimeInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738A72017200F00815A3C /* XHSSModelRuntimeInfoManager.m */; };
+		18B738AB2017207400815A3C /* XHSSDataTypeClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738AA2017207400815A3C /* XHSSDataTypeClassify.m */; };
+		18B738AE2017211C00815A3C /* XHSSSQLSentenceGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738AD2017211C00815A3C /* XHSSSQLSentenceGenerator.m */; };
+		18B738B1201721E900815A3C /* XHSSModelDBOprationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B738B0201721E900815A3C /* XHSSModelDBOprationBridge.m */; };
 		18B92E5B1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */; };
 		18E23CED1FFDC1EF00EEE891 /* TestTabScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CEC1FFDC1EF00EEE891 /* TestTabScrollVC.m */; };
 		18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2830F1F9DC12B00FBF5DC /* XHSSAssetPickerVC.m */; };
@@ -105,27 +104,13 @@
 		183701C21FEA6C73008F73C5 /* UIView+XHSSShadowMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XHSSShadowMask.h"; sourceTree = "<group>"; };
 		183701C31FEA6C73008F73C5 /* UIView+XHSSShadowMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHSSShadowMask.m"; sourceTree = "<group>"; };
 		1837259220061B8C000D52E6 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
-		183D26212016DA1D0019CD5B /* XHDataTypeClassify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDataTypeClassify.h; sourceTree = "<group>"; };
-		183D26222016DA1D0019CD5B /* XHDataTypeClassify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDataTypeClassify.m; sourceTree = "<group>"; };
-		183D26232016DA1D0019CD5B /* XHDBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDBCommon.h; sourceTree = "<group>"; };
-		183D26242016DA1D0019CD5B /* XHDBCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDBCommon.m; sourceTree = "<group>"; };
-		183D26252016DA1D0019CD5B /* XHDBOprationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDBOprationManager.h; sourceTree = "<group>"; };
-		183D26262016DA1D0019CD5B /* XHDBOprationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDBOprationManager.m; sourceTree = "<group>"; };
-		183D26272016DA1D0019CD5B /* XHDBPathGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDBPathGenerator.h; sourceTree = "<group>"; };
-		183D26282016DA1D0019CD5B /* XHDBPathGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDBPathGenerator.m; sourceTree = "<group>"; };
-		183D26292016DA1D0019CD5B /* XHGetModleRuntimeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHGetModleRuntimeInfo.h; sourceTree = "<group>"; };
-		183D262A2016DA1D0019CD5B /* XHGetModleRuntimeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHGetModleRuntimeInfo.m; sourceTree = "<group>"; };
-		183D262B2016DA1D0019CD5B /* XHSQLiteDBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSQLiteDBCore.h; sourceTree = "<group>"; };
-		183D262C2016DA1D0019CD5B /* XHSQLiteDBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSQLiteDBCore.m; sourceTree = "<group>"; };
-		183D262D2016DA1D0019CD5B /* XHSQLSentenceGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSQLSentenceGenerator.h; sourceTree = "<group>"; };
-		183D262E2016DA1D0019CD5B /* XHSQLSentenceGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSQLSentenceGenerator.m; sourceTree = "<group>"; };
-		183D26302016DA1D0019CD5B /* SQLiteDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteDBManager.h; sourceTree = "<group>"; };
-		183D26312016DA1D0019CD5B /* SQLiteDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteDBManager.m; sourceTree = "<group>"; };
 		183D26332016DA1D0019CD5B /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		183D26342016DA1D0019CD5B /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		183D26352016DA1D0019CD5B /* TestModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModle.h; sourceTree = "<group>"; };
 		183D26362016DA1D0019CD5B /* TestModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModle.m; sourceTree = "<group>"; };
 		183D26422016DBEE0019CD5B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		183D26442016E74A0019CD5B /* XHSSSQLitDBCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSSQLitDBCore.h; sourceTree = "<group>"; };
+		183D26452016E74A0019CD5B /* XHSSSQLitDBCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSSQLitDBCore.m; sourceTree = "<group>"; };
 		1848EA68200DE7A600D5FCD0 /* XHSSMapUnlockScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSMapUnlockScrollView.h; sourceTree = "<group>"; };
 		1848EA69200DE7A600D5FCD0 /* XHSSMapUnlockScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSMapUnlockScrollView.m; sourceTree = "<group>"; };
 		1848EA6A200DE7A600D5FCD0 /* XHSSMapUnLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSMapUnLockView.h; sourceTree = "<group>"; };
@@ -138,6 +123,18 @@
 		189B048C1FD0E2EA009734FC /* XHSSTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSTextField.m; sourceTree = "<group>"; };
 		18AA88171FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSVideoPlayerCnotrolView.h; sourceTree = "<group>"; };
 		18AA88181FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSVideoPlayerCnotrolView.m; sourceTree = "<group>"; };
+		18B738A020171F1400815A3C /* XHSSDBCommonSettingFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSDBCommonSettingFile.h; sourceTree = "<group>"; };
+		18B738A120171F1400815A3C /* XHSSDBCommonSettingFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSDBCommonSettingFile.m; sourceTree = "<group>"; };
+		18B738A320171F4700815A3C /* XHSSDBPathManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSDBPathManager.h; sourceTree = "<group>"; };
+		18B738A420171F4700815A3C /* XHSSDBPathManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSDBPathManager.m; sourceTree = "<group>"; };
+		18B738A62017200F00815A3C /* XHSSModelRuntimeInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSModelRuntimeInfoManager.h; sourceTree = "<group>"; };
+		18B738A72017200F00815A3C /* XHSSModelRuntimeInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSModelRuntimeInfoManager.m; sourceTree = "<group>"; };
+		18B738A92017207400815A3C /* XHSSDataTypeClassify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSDataTypeClassify.h; sourceTree = "<group>"; };
+		18B738AA2017207400815A3C /* XHSSDataTypeClassify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSDataTypeClassify.m; sourceTree = "<group>"; };
+		18B738AC2017211C00815A3C /* XHSSSQLSentenceGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSSQLSentenceGenerator.h; sourceTree = "<group>"; };
+		18B738AD2017211C00815A3C /* XHSSSQLSentenceGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSSQLSentenceGenerator.m; sourceTree = "<group>"; };
+		18B738AF201721E900815A3C /* XHSSModelDBOprationBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHSSModelDBOprationBridge.h; sourceTree = "<group>"; };
+		18B738B0201721E900815A3C /* XHSSModelDBOprationBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHSSModelDBOprationBridge.m; sourceTree = "<group>"; };
 		18B92E591FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSSCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		18B92E5A1FCFC151007B0F8F /* XHSSCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSSCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		18E23CEB1FFDC1EF00EEE891 /* TestTabScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTabScrollVC.h; sourceTree = "<group>"; };
@@ -224,7 +221,7 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
-		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */ = {
+		182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself（自定义的一些控件） */ = {
 			isa = PBXGroup;
 			children = (
 				1848EA66200DE7A600D5FCD0 /* ScrollViewWithReuse */,
@@ -238,7 +235,7 @@
 				182FF9811F9D819300E8A179 /* Calendar（日历） */,
 				182FF9841F9D819300E8A179 /* PageControl(自定义PageControl) */,
 			);
-			path = WidgetsDefineByMyself;
+			path = "WidgetsDefineByMyself（自定义的一些控件）";
 			sourceTree = "<group>";
 		};
 		182FF97E1F9D819300E8A179 /* Banner（复用子视图的Banner控件） */ = {
@@ -289,41 +286,10 @@
 		183D261F2016DA1D0019CD5B /* RuntimeSQLit */ = {
 			isa = PBXGroup;
 			children = (
-				183D26202016DA1D0019CD5B /* SQLitCore */,
-				183D262F2016DA1D0019CD5B /* SQLitManager */,
+				183D26432016E71A0019CD5B /* SQLitDBCore */,
 				183D26322016DA1D0019CD5B /* TestModel */,
 			);
 			path = RuntimeSQLit;
-			sourceTree = "<group>";
-		};
-		183D26202016DA1D0019CD5B /* SQLitCore */ = {
-			isa = PBXGroup;
-			children = (
-				183D26212016DA1D0019CD5B /* XHDataTypeClassify.h */,
-				183D26222016DA1D0019CD5B /* XHDataTypeClassify.m */,
-				183D26232016DA1D0019CD5B /* XHDBCommon.h */,
-				183D26242016DA1D0019CD5B /* XHDBCommon.m */,
-				183D26252016DA1D0019CD5B /* XHDBOprationManager.h */,
-				183D26262016DA1D0019CD5B /* XHDBOprationManager.m */,
-				183D26272016DA1D0019CD5B /* XHDBPathGenerator.h */,
-				183D26282016DA1D0019CD5B /* XHDBPathGenerator.m */,
-				183D26292016DA1D0019CD5B /* XHGetModleRuntimeInfo.h */,
-				183D262A2016DA1D0019CD5B /* XHGetModleRuntimeInfo.m */,
-				183D262B2016DA1D0019CD5B /* XHSQLiteDBCore.h */,
-				183D262C2016DA1D0019CD5B /* XHSQLiteDBCore.m */,
-				183D262D2016DA1D0019CD5B /* XHSQLSentenceGenerator.h */,
-				183D262E2016DA1D0019CD5B /* XHSQLSentenceGenerator.m */,
-			);
-			path = SQLitCore;
-			sourceTree = "<group>";
-		};
-		183D262F2016DA1D0019CD5B /* SQLitManager */ = {
-			isa = PBXGroup;
-			children = (
-				183D26302016DA1D0019CD5B /* SQLiteDBManager.h */,
-				183D26312016DA1D0019CD5B /* SQLiteDBManager.m */,
-			);
-			path = SQLitManager;
 			sourceTree = "<group>";
 		};
 		183D26322016DA1D0019CD5B /* TestModel */ = {
@@ -343,6 +309,20 @@
 				183D26422016DBEE0019CD5B /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		183D26432016E71A0019CD5B /* SQLitDBCore */ = {
+			isa = PBXGroup;
+			children = (
+				18B7389F20171EF400815A3C /* DBOprationUtil */,
+				183D26442016E74A0019CD5B /* XHSSSQLitDBCore.h */,
+				183D26452016E74A0019CD5B /* XHSSSQLitDBCore.m */,
+				18B738AC2017211C00815A3C /* XHSSSQLSentenceGenerator.h */,
+				18B738AD2017211C00815A3C /* XHSSSQLSentenceGenerator.m */,
+				18B738AF201721E900815A3C /* XHSSModelDBOprationBridge.h */,
+				18B738B0201721E900815A3C /* XHSSModelDBOprationBridge.m */,
+			);
+			path = SQLitDBCore;
 			sourceTree = "<group>";
 		};
 		1848EA66200DE7A600D5FCD0 /* ScrollViewWithReuse */ = {
@@ -405,6 +385,21 @@
 				180F059B1FA6C40200D01EFD /* XHSSDoubleControlSlider.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		18B7389F20171EF400815A3C /* DBOprationUtil */ = {
+			isa = PBXGroup;
+			children = (
+				18B738A020171F1400815A3C /* XHSSDBCommonSettingFile.h */,
+				18B738A120171F1400815A3C /* XHSSDBCommonSettingFile.m */,
+				18B738A320171F4700815A3C /* XHSSDBPathManager.h */,
+				18B738A420171F4700815A3C /* XHSSDBPathManager.m */,
+				18B738A62017200F00815A3C /* XHSSModelRuntimeInfoManager.h */,
+				18B738A72017200F00815A3C /* XHSSModelRuntimeInfoManager.m */,
+				18B738A92017207400815A3C /* XHSSDataTypeClassify.h */,
+				18B738AA2017207400815A3C /* XHSSDataTypeClassify.m */,
+			);
+			path = DBOprationUtil;
 			sourceTree = "<group>";
 		};
 		18B92E581FCFC151007B0F8F /* Tools（自定义CollectionViewLayout） */ = {
@@ -488,7 +483,7 @@
 				18F2C8141FECC06F006E3DE9 /* Resource */,
 				18399D991FD4D7C2004E245E /* XHSSUIFactory（布局适配工具） */,
 				18B92E581FCFC151007B0F8F /* Tools（自定义CollectionViewLayout） */,
-				182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself */,
+				182FF97D1F9D819300E8A179 /* WidgetsDefineByMyself（自定义的一些控件） */,
 				18E6FDCF1F9A1B670039393F /* AVFoundation */,
 				18E583C21F99FC4100A42920 /* JS_OCInteractive */,
 				18E9F9501F94D98B00BD3E74 /* AppDelegate.h */,
@@ -744,27 +739,28 @@
 				18E9F9551F94D98B00BD3E74 /* ViewController.m in Sources */,
 				181E98051FD91D9D005A6F70 /* UIView+XHSSUIManagerTool.m in Sources */,
 				183701C41FEA6C73008F73C5 /* UIView+XHSSShadowMask.m in Sources */,
-				183D26382016DA1D0019CD5B /* XHDBCommon.m in Sources */,
 				18EB94921FEBDE3F001FACE2 /* UIView+XHSSUIFactoryBaseView.m in Sources */,
 				1848EA78200DE87900D5FCD0 /* XHSSReuseScrollView.m in Sources */,
-				183D26372016DA1D0019CD5B /* XHDataTypeClassify.m in Sources */,
 				181E98041FD91D9D005A6F70 /* XHSSUIManager.m in Sources */,
 				18E283101F9DC12B00FBF5DC /* XHSSAssetPickerVC.m in Sources */,
+				18B738AE2017211C00815A3C /* XHSSSQLSentenceGenerator.m in Sources */,
+				18B738B1201721E900815A3C /* XHSSModelDBOprationBridge.m in Sources */,
 				18F52A951FE8E779001C9855 /* XHSSCutImageView.m in Sources */,
+				18B738A220171F1400815A3C /* XHSSDBCommonSettingFile.m in Sources */,
 				183D263F2016DA1D0019CD5B /* Book.m in Sources */,
 				189B048D1FD0E2EA009734FC /* XHSSTextField.m in Sources */,
 				18AA88191FA17E700002D6EF /* XHSSVideoPlayerCnotrolView.m in Sources */,
 				18E9F9521F94D98B00BD3E74 /* AppDelegate.m in Sources */,
-				183D26392016DA1D0019CD5B /* XHDBOprationManager.m in Sources */,
 				18E6FDD21F9A1CCB0039393F /* AVFoundationViewController.m in Sources */,
-				183D263D2016DA1D0019CD5B /* XHSQLSentenceGenerator.m in Sources */,
-				183D263E2016DA1D0019CD5B /* SQLiteDBManager.m in Sources */,
+				18B738AB2017207400815A3C /* XHSSDataTypeClassify.m in Sources */,
 				18F52A921FE8E779001C9855 /* UIViewController+XHSSActionSheet.m in Sources */,
 				182FF9881F9D819300E8A179 /* HNAHiAccumulatePointCalendarView.m in Sources */,
 				18E9F94F1F94D98B00BD3E74 /* main.m in Sources */,
 				1848EA70200DE7A600D5FCD0 /* XHSSMapUnLockView.m in Sources */,
 				18F52AA11FE91C1F001C9855 /* XHSSShadowView.m in Sources */,
+				18B738A520171F4700815A3C /* XHSSDBPathManager.m in Sources */,
 				180F059C1FA6C40200D01EFD /* XHSSDoubleControlSlider.m in Sources */,
+				18B738A82017200F00815A3C /* XHSSModelRuntimeInfoManager.m in Sources */,
 				18F52A931FE8E779001C9855 /* XHSSCalculatorView.m in Sources */,
 				183D26402016DA1D0019CD5B /* TestModle.m in Sources */,
 				18EDF2FC1F9F35B4001CC444 /* XHSSImageBrowserVC.m in Sources */,
@@ -773,20 +769,18 @@
 				18F52A941FE8E779001C9855 /* XHSSPaintingView.m in Sources */,
 				18E32E771FF5DF3A001C1349 /* XHSSTabScrollView.m in Sources */,
 				18EB948F1FEBBBE6001FACE2 /* XHSSUIFactoryViewModel.m in Sources */,
-				183D263A2016DA1D0019CD5B /* XHDBPathGenerator.m in Sources */,
 				181E98031FD91D9D005A6F70 /* UIView+XHSSLayoutTool.m in Sources */,
 				1822ADB01FA969E1009247DE /* XHSSVideoEditView.m in Sources */,
 				18F52A961FE8E779001C9855 /* XHSSToolsView.m in Sources */,
 				181E98061FD91D9D005A6F70 /* UIView+XHSSFrameTool.m in Sources */,
-				183D263B2016DA1D0019CD5B /* XHGetModleRuntimeInfo.m in Sources */,
 				1848EA71200DE7A600D5FCD0 /* XHSSScrollPopWindow.m in Sources */,
 				182FF9891F9D819300E8A179 /* HNAHiAccumulatePointPageControlView.m in Sources */,
 				18F2C8131FECA577006E3DE9 /* XHSSManagerBridge.m in Sources */,
 				18E23CED1FFDC1EF00EEE891 /* TestTabScrollVC.m in Sources */,
-				183D263C2016DA1D0019CD5B /* XHSQLiteDBCore.m in Sources */,
 				18E283131F9DEE0F00FBF5DC /* XHSSAlbumListVC.m in Sources */,
 				18E583C51F99FF7600A42920 /* XHSSWebViewVC.m in Sources */,
 				1848EA6F200DE7A600D5FCD0 /* XHSSMapUnlockScrollView.m in Sources */,
+				183D26462016E74A0019CD5B /* XHSSSQLitDBCore.m in Sources */,
 				181E98071FD91D9D005A6F70 /* XHSSUIFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

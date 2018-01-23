@@ -1,16 +1,16 @@
 //
-//  XHGetModleRuntimeInfo.m
-//  RuntimeSQLit
+//  XHSSModelRuntimeInfoManager.m
+//  XiaoHaiLayoutFramework
 //
-//  Created by Admin on 16/9/23.
-//  Copyright © 2016年 XH. All rights reserved.
+//  Created by Apple on 2018/1/23.
+//  Copyright © 2018年 XiaoHai. All rights reserved.
 //
 
-#import "XHGetModleRuntimeInfo.h"
-#import "XHDBCommon.h"
-#import "XHDataTypeClassify.h"
+#import "XHSSModelRuntimeInfoManager.h"
+#import "XHSSDBCommonSettingFile.h"
+#import "XHSSDataTypeClassify.h"
 
-@implementation XHGetModleRuntimeInfo
+@implementation XHSSModelRuntimeInfoManager
 
 /**
  *  成员变量类型（属性类型）
@@ -131,7 +131,7 @@ NSString *const XHSSPropertyTypeId = @"@";
         NSString* typeStr = [propertyTypeDes substringWithRange:NSMakeRange(2, propertyTypeDes.length - 3)];
         Class typeClass = NSClassFromString(typeStr);
         baseType = XHPropertyBaseTypeClass;
-        if ([XHDataTypeClassify isClassFromFoundation:typeClass]) {
+        if ([XHSSDataTypeClassify isClassFromFoundation:typeClass]) {
             baseType |= XHPropertyBaseTypeFromFoundation;
         }
         if ([typeClass isSubclassOfClass:[NSNumber class]]) {
